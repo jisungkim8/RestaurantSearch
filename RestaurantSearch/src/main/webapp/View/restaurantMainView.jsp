@@ -56,7 +56,7 @@
 <!-- /styleswitcher - demo only -->
 
 <!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
-<link href="design/plugins/styleswitcher/styleswitcher.css" rel="stylesheet" type="text/css" />		
+<!-- <link href="design/plugins/styleswitcher/styleswitcher.css" rel="stylesheet" type="text/css" />		 -->
 	
 <!-- Morenizr -->
 <script type="text/javascript" src="design/plugins/modernizr.min.js"></script>
@@ -853,8 +853,8 @@
 		src="design/plugins/jquery.backstretch.min.js"></script>
 	<script type="text/javascript"
 		src="design/plugins/superslides/dist/jquery.superslides.min.js"></script>
-	<script type="text/javascript"
-		src="design/plugins/styleswitcher/styleswitcher.js"></script>
+	<!-- <script type="text/javascript"
+		src="design/plugins/styleswitcher/styleswitcher.js"></script> -->
 	<!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
 	<script type="text/javascript"
 		src="design/plugins/mediaelement/build/mediaelement-and-player.min.js"></script>

@@ -8,6 +8,7 @@
 <meta name="keywords" content="HTML5,CSS3,Template" />
 <meta name="description" content="" />
 <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+<script src="/Practice3/lib/jquery-1.11.0.min.js"></script>
 
 <!-- mobile settings -->
 <meta name="viewport"
@@ -35,7 +36,7 @@
 <link href="design/css/superslides.css" rel="stylesheet" type="text/css" />
 
 <!-- SHOP CSS -->
-<link href="design/css/shop.css" rel="stylesheet" type="text/css" />
+<!-- <link href="design/css/shop.css" rel="stylesheet" type="text/css" /> -->
 
 <!-- THEME CSS -->
 <link href="design/css/essentials.css" rel="stylesheet" type="text/css" />
@@ -49,7 +50,7 @@
 <!-- DARK SKIN -->
 
 <!-- styleswitcher - demo only -->
-<link href="design/css/color_scheme/orange.css"
+<!-- <link href="design/css/color_scheme/orange.css"
 	rel="alternate stylesheet" type="text/css" title="orange" />
 <link href="design/css/color_scheme/red.css" rel="alternate stylesheet"
 	type="text/css" title="red" />
@@ -68,16 +69,26 @@
 <link href="design/css/color_scheme/brown.css"
 	rel="alternate stylesheet" type="text/css" title="brown" />
 <link href="design/css/color_scheme/lightgrey.css"
-	rel="alternate stylesheet" type="text/css" title="lightgrey" />
+	rel="alternate stylesheet" type="text/css" title="lightgrey" /> -->
 <!-- /styleswitcher - demo only -->
 
 <!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
-<link href="design/plugins/styleswitcher/styleswitcher.css"
-	rel="stylesheet" type="text/css" />
+<!-- <link href="design/plugins/styleswitcher/styleswitcher.css"
+	rel="stylesheet" type="text/css" /> -->
 
 <!-- Morenizr -->
 <script type="text/javascript" src="design/plugins/modernizr.min.js"></script>
+<script>
 
+$("#phoneNum").blur(function(){
+	if (!($("#phoneNum").val())) {
+		$("#phoneCheckMessage").html("<font id='idColor' color='red'>전화번호를 입력해주세요.</font>")
+	} else {
+		$("#phoneCheckMessage").html("");
+	}
+}) // phone(blur)
+
+</script>
 </head>
 <body>
 	<!-- Available classes for body: boxed , pattern1...pattern10 . Background Image - example add: data-background="design/images/boxed_background/1.jpg"  -->
@@ -723,8 +734,9 @@
 						<div class="row">
 							<div class="form-group">
 								<div class="col-md-12">
-									<label>전화번호</label> <input type="text" name="phoneNum"
+									<label>전화번호</label> <input type="text" id="phoneNum" name="phoneNum"
 										value="${memDetInfoDto.phoneNum}" class="form-control">
+									<tr><td id="phoneCheckMessage" class="check" colspan="3"></td></tr>
 								</div>
 							</div>
 						</div>
@@ -960,8 +972,8 @@
 		src="design/plugins/jquery.backstretch.min.js"></script>
 	<script type="text/javascript"
 		src="design/plugins/superslides/dist/jquery.superslides.min.js"></script>
-	<script type="text/javascript"
-		src="design/plugins/styleswitcher/styleswitcher.js"></script>
+	<!-- <script type="text/javascript"
+		src="design/plugins/styleswitcher/styleswitcher.js"></script> -->
 	<!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
 
 
