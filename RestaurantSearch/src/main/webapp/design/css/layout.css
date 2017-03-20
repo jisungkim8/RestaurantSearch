@@ -598,7 +598,7 @@ header#topNav li a i.fa {
 
 /** 04. Slider
 **************************************************************** **/
-#slider * { color:#fff; }
+#slider * { color:black; }
 #slider {
 	color:#fff;
 	background:#E2E6E9;
@@ -685,7 +685,7 @@ header#topNav li a i.fa {
 		-webkit-text-stroke: 0.2px;
 	}
 	#slider .image-caption .inner .btn {
-		margin-top:40px;
+		margin-top:10px;
 		font-size:30px;
 		padding-bottom:15x;
 		font-weight:200;
