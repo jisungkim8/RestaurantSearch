@@ -21,5 +21,12 @@ public class MemberDaoImpl extends SqlSessionDaoSupport implements MemberDao  {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public int checkIdMember(String id) {
+		// TODO Auto-generated method stub
+		int memberCount=getSqlSession().selectOne("checkIdMember", id);
+		return memberCount;
+		
+	}
 
 }

@@ -828,8 +828,6 @@
 	</footer>
 	<!-- /FOOTER -->
 
-
-
 	<!-- JAVASCRIPT FILES -->
 	<script type="text/javascript" src="design/plugins/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript"

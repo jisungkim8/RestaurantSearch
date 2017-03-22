@@ -8,7 +8,6 @@
 <meta name="keywords" content="HTML5,CSS3,Template" />
 <meta name="description" content="" />
 <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
-<script src="/Practice3/lib/jquery-1.11.0.min.js"></script>
 
 <!-- mobile settings -->
 <meta name="viewport"
@@ -77,16 +76,182 @@
 	rel="stylesheet" type="text/css" /> -->
 
 <!-- Morenizr -->
-<script type="text/javascript" src="design/plugins/modernizr.min.js"></script>
+<!-- <script type="text/javascript" src="design/plugins/modernizr.min.js"></script> -->
+<script src="/RestaurantSearch/lib/jquery-1.11.0.min.js"></script>
+<script language="JavaScript" src="script.js"></script>
 <script>
 
-$("#phoneNum").blur(function(){
-	if (!($("#phoneNum").val())) {
-		$("#phoneCheckMessage").html("<font id='idColor' color='red'>전화번호를 입력해주세요.</font>")
-	} else {
-		$("#phoneCheckMessage").html("");
-	}
-}) // phone(blur)
+function memberReg(id){  //서버에 요청하는 문서이름을 매개변수 2)
+		alert("중복 id 체크 "+id)
+		
+   if(id==""){
+	   //document.getElementById("ducheck")=>$("ducheck")
+	   alert("id가 비었음")
+	   $("#memberIdTxt").innerHTML="<font color='red'>"+
+	   "먼저 아이디를 입력하세요</font>";
+	   $("#memberId").focus();//커서입력
+	   return false;
+   }
+   
+	$.ajax({
+    		url:'/RestaurantSearch/dupliMemberCheck.do', //요청문서를 지정할때 사용하는 키명(url):요청문서명
+    		//2.data:{매개변수명:값,매개변수명2:값2,,,,}
+    		data:{id:id},
+    		type : "POST",
+    		//3.success:콜백함수명(매개변수)
+    		success:function(args){
+    			alert("args===>"+args);
+    		}
+    	})//$.ajax
+}
+
+$(function(){
+	
+	 //2.중복  id를 입력했을때 호출하는 함수   
+	var validationCheck = {emailVali:false, passwdVali:false};
+	  
+	
+ 	
+	$("#createId").click(function(){
+		
+		var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+		alert("클릭되었음");
+		if (!($("#memberId").val())) {
+		      alert("이메일을 입력해 주세요. 필수 입력사항입니다.")
+		      $("#memberId").focus();
+		   //   history.back();
+		      return;
+		}else if(!regEmail.test($("#memberId").val())) {
+			  //$("#memberIdTxt").html("<font id='idColor' color='red'>이메일주소가 유효하지 않습니다.</font>")
+			  alert("이메일주소가 유효하지 않습니다.")
+		      $("#memberId").focus();
+		      //history.back();
+		      return;
+		}
+		
+		if (!($("#password").val())) {
+		      alert("패스워드를 입력하여 주세요. 필수 입력사항입니다.")
+		      $("#password").focus();
+		   //   history.back();
+		      return;
+			} 
+		
+		if (!($("#rePassword").val())) {
+		      alert("중복패스워드를 입력하여 주세요. 필수 입력사항입니다.")
+		      $("#rePassword").focus();
+		   //   history.back();
+		      return;
+		} 
+		
+		if (!($("#birthDate").val())) {
+		      alert("생년월일을 입력해 주세요. 필수 입력사항입니다.")
+		      $("#birthDate").focus();
+		   //   history.back();
+		      return;
+		} 
+		
+		if (!($("#phoneNum").val())) {
+		      alert("전화번호를 입력해 주세요. 필수 입력사항입니다.")
+		      $("#phoneNum").focus();
+		   //   history.back();
+		      return;
+			}
+		
+		if ($("#password").val() != $("#rePassword").val()) {
+			alert("패스워드가 일치하지 않습니다.정확하게 입력하여 주세요.");
+			$("#password").focus();
+			return;
+		}
+		
+		document.registerMem.submit();
+	})
+	
+	
+	
+	$("#memberId").blur(function(){
+		//이메일 유효성 검사
+		var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+		
+		 if (!($("#memberId").val())) {
+			$("#memberIdTxt").html("<font id='idColor' color='red'>이메일을 입력해주세요.</font>")
+		}else if(!regEmail.test($("#memberId").val())) {
+			$("#memberIdTxt").html("<font id='idColor' color='red'>이메일주소가 유효하지 않습니다.</font>")
+        }else {
+			$("#memberIdTxt").html("");
+		} 
+	}) // phone(blur)
+	
+	$("#password").blur(function() {
+			var password = $("#password").val();
+			var passwordCheck = {number:false, special:false, upper:false, lower:false};
+			
+			for (i=0; i<password.length; i++) {
+				if (password.charAt(i)>=0 && password.charAt(i)<=9) {
+// 					alert("숫자");
+					passwordCheck["number"]=true;
+				}
+				if ((password.charAt(i)>="!" && password.charAt(i)<="/") ||
+						(password.charAt(i)>=":" && password.charAt(i)<="@") ||
+						(password.charAt(i)>="[" && password.charAt(i)<="`") ||
+						(password.charAt(i)>="{" && password.charAt(i)<="}")) {
+// 					alert("특수문자")
+					passwordCheck["special"]=true;
+				}
+				//if (password.charAt(i)>="A" && password.charAt(i)<="Z") {
+// 					alert("대문자")
+				//	passwordCheck["upper"]=true;
+				//}
+				if (password.charAt(i)>="a" && password.charAt(i)<="z") {
+// 					alert("소문자")
+					passwordCheck["lower"]=true;
+				}
+			} // for
+			if (passwordCheck["number"] && 
+					passwordCheck["special"] && 
+					//passwordCheck["upper"] && 
+					passwordCheck["lower"] &&
+					password.length >= 6) {
+				$("#passwordCheckMessage").html("");
+			} else {
+				$("#passwordCheckMessage").html("<font id='idColor' color='red'>6자리 이상의 특수기호, 숫자, 문자가 포함되어야 합니다.</font>");
+				passwordCheck = {number:false, special:false, upper:false, lower:false};
+			}
+		}) // password(blur)
+		
+		$("#rePassword").blur(function(){
+			if ($("#password").val() != $("#rePassword").val()) {
+				$("#passwordReCheckMessage").html("<font id='idColor' color='red'>패스워드가 일치하지 않습니다</font>");
+				return;
+			}
+		})
+		
+		$("#birthDate").blur(function(){
+			 if (!($("#birthDate").val())) {
+					$("#birthCheckMessage").html("<font id='idColor' color='red'>생년월일을 입력해주세요.</font>")
+				} else {
+					$("#birthCheckMessage").html("");
+				} 
+		}) // passwordCheck(blur)
+		
+		$("#phoneNum").blur(function(){
+			 if (!($("#phoneNum").val())) {
+					$("#phoneNumCheckMessage").html("<font id='idColor' color='red'>전화번호를 입력해주세요.</font>")
+				} else {
+					$("#phoneNumCheckMessage").html("");
+				} 
+		})
+		
+		$("#birthDate").blur(function(){
+			if ($("#password").val() != $("#rePassword").val()) {
+				$("#passwordReCheckMessage").html("<font id='idColor' color='red'>비밀번호가 일치하지 않습니다.</font>")
+			} else {
+				$("#passwordReCheckMessage").html("");
+			}
+		})
+		
+})
+
+
 
 </script>
 </head>
@@ -672,41 +837,43 @@ $("#phoneNum").blur(function(){
 				<div class="col-md-9">
 
 					<h2>
-						생성 <strong>계정</strong>
+					 	계정 <strong>생성</strong>
 					</h2>
 
-					<form class="white-row" method="post" action="memberRegister.do">
+					<form name="registerMem" class="white-row" method="post" action="memberRegister.do">
 
 						<!-- alert failed -->
-						<div class="alert alert-danger">
+						<!-- <div class="alert alert-danger">
 							<i class="fa fa-frown-o"></i> <strong>Password</strong> do not
 							match!
-						</div>
+						</div> -->
 
 						<div class="row">
 							<div class="form-group">
 								<div class="col-md-6">
-									이메일<br> <input type="text" name="memberId"
-										value="${memDetInfoDto.memberId}" class="form-control">
+									이메일<br>
+									<input type="text" id="memberId" name="memberId"
+										value="${memDetInfoDto.memberId}" class="form-control" placeholder="이메일을 입력하세요.[필수]">
+										<table><tr><td id="memberIdTxt" ></td></tr></table>
 								</div>
-								<div class="col-md-2">
+								<div class="col-md-6">
 									<br>
-									<button class="btn btn-primary">중복확인</button>
-								</div>
-								<div class="col-md-4">
-									<br> 고객의 이메일(아이디)를 적어주세요.
+									<input type="button" id="repeatCheck" value="중복확인" class="btn btn-primary" onclick="memberReg(this.form.memberId.value)">
+									<!-- <button id="repeatCheck" class="btn btn-primary">중복확인</button> -->
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group">
 								<div class="col-md-6">
-									<label>패스워드</label> <input type="password" name="password"
-										value="${memSimInfoDto.password}" class="form-control">
+									<label>패스워드</label> <input type="password" id="password" name="password"
+										value="${memSimInfoDto.password}" class="form-control" placeholder="6자리 이상의 숫자,문자,특수기호를 포함하세요.[필수]">
+										<table><tr><td id="passwordCheckMessage" ></td></tr></table>
 								</div>
 								<div class="col-md-6">
-									<label>패스워드 확인</label> <input type="password" name="rePassword"
-										class="form-control">
+									<label>패스워드 확인</label> <input type="password" id="rePassword" name="rePassword"
+										class="form-control" placeholder="확인 패스워드를 입력하세요.[필수]">
+										<table><tr><td id="passwordReCheckMessage" ></td></tr></table>
 								</div>
 							</div>
 						</div>
@@ -714,57 +881,39 @@ $("#phoneNum").blur(function(){
 						<div class="row">
 							<div class="form-group">
 								<div class="col-md-12">
-									<label>생년월일</label> <input type="text" name="birthDate"
-										value="${memDetInfoDto.birthDate}" class="form-control">
+									<label>생년월일</label> <input type="text" id="birthDate" name="birthDate"
+										value="${memDetInfoDto.birthDate}" class="form-control" placeholder="생년월일 숫자8자리를 입력하세요. ex) 20010101 [필수]">
+									<table><tr><td id="birthCheckMessage" ></td></tr></table>
 								</div>
 							</div>
 						</div>
+						
 						<div class="row">
 							<div class="form-group">
-								<div class="col-md-12">
+								<div class="col-md-8">
+									<label>전화번호</label> <input type="text" id="phoneNum" name="phoneNum"
+										value="${memDetInfoDto.phoneNum}" class="form-control" placeholder="- 없이 전화번호를 입력하여 주세요.[필수]">
+									<tr><td id="phoneCheckMessage" class="check" colspan="3"></td></tr>
+										<table><tr><td id="phoneNumCheckMessage" ></td></tr></table>
+								</div>
+								<div class="col-md-4">
 									<label>성별</label> <%-- <input type="text" name="gender"
 										value="${memDetInfoDto.gender}" class="form-control"> --%>
-									<select class="form-control" name="gender">
+									<select class="form-control" id="gender" name="gender">
 										<option>남자</option>
 										<option>여자</option>
 									</select>
 								</div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="form-group">
-								<div class="col-md-12">
-									<label>전화번호</label> <input type="text" id="phoneNum" name="phoneNum"
-										value="${memDetInfoDto.phoneNum}" class="form-control">
-									<tr><td id="phoneCheckMessage" class="check" colspan="3"></td></tr>
-								</div>
-							</div>
-						</div>
+						
+						
 
 						<div class="row">
 							<div class="form-group">
 								<div class="col-md-12">
-									<!-- <label>이메일 수신여부</label> -->
-									<input type="checkbox" value=""> 이메일 수신여부
-									<%-- <input type="text" name="emailCheck"  value="${memDetInfoDto.emailCheck}" class="form-control"> --%>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="form-group">
-								<div class="col-md-12">
-									<label>자기소개</label> <input type="text" name="selfIntro"
-										value="${memDetInfoDto.selfIntro}" class="form-control">
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="form-group">
-								<div class="col-md-12">
-									<label>사진경로</label> <input type="text" name="photoPath"
-										value="${memDetInfoDto.phonePath}" class="form-control">
+									<label>대표이미지</label> <input type="text" name="photoPath" value="${memDetInfoDto.phonePath}" 
+																		 class="form-control"  placeholder="대표이미지를 첨부하여 주세요.[선택]">
 								</div>
 							</div>
 						</div>
@@ -782,7 +931,7 @@ $("#phoneNum").blur(function(){
 							<div class="form-group">
 								<div class="col-md-12">
 									<label>관심음식</label> <input type="text" name="interestFood"
-										value="${memDetInfoDto.interestFood}" class="form-control">
+										value="${memDetInfoDto.interestFood}" class="form-control" placeholder="좋아하거나 관심있는 음식을 입력하여 주세요.[선택]">
 								</div>
 							</div>
 						</div>
@@ -791,21 +940,40 @@ $("#phoneNum").blur(function(){
 							<div class="form-group">
 								<div class="col-md-12">
 									<label>닉네임</label> <input type="text" name="nickname"
-										value="${memDetInfoDto.nickname}" class="form-control">
+										value="${memDetInfoDto.nickname}" class="form-control" placeholder="닉네임을 입력하여 주세요.[선택]">
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group">
+								<div class="col-md-12">
+									<label>자기소개</label> <%-- <input type="textArea" name="selfIntro"
+										value="${memDetInfoDto.selfIntro}" class="form-control"> --%>
+										<textarea id="selfIntro" name="selfIntro" rows="5" class="form-control" placeholder="자기소개를 입력하여 주세요.[선택]"></textarea>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group">
+								<div class="col-md-12">
+									<!-- <label>이메일 수신여부</label> -->
+										<div class="checkbox">
+  											<label><input type="checkbox" name="emailCheck" value="">이메일 수신여부</label>
+										</div>
+									<%-- <input type="text" name="emailCheck"  value="${memDetInfoDto.emailCheck}" class="form-control"> --%>
 								</div>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-md-12">
-								<input type="submit" value="계정만들기"
-									class="btn btn-primary pull-right push-bottom"
+								<input type="button" id="createId" value="계정만들기" class="btn btn-primary pull-right push-bottom"
 									data-loading-text="Loading...">
 							</div>
 						</div>
-
 					</form>
-
 				</div>
 				<!-- /REGISTER -->
 

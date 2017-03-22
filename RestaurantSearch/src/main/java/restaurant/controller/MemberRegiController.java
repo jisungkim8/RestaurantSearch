@@ -1,5 +1,8 @@
 package restaurant.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,14 +33,27 @@ public class MemberRegiController {
 	@RequestMapping(value = "/memberRegister.do", method = RequestMethod.POST)
 	public ModelAndView submit(@ModelAttribute("memDetInfoDto") MemDetInfoDto memDetInfoDto,
 			@ModelAttribute("memSimInfoDto") MemSimInfoDto memSimInfoDto) {
-		
+
 		if (log.isDebugEnabled()) {
 			log.debug("memDetInfoDto=" + memDetInfoDto); // toString()
 			log.debug("memSimInfoDto=" + memSimInfoDto); // toString()
 		}
 
+		memDetInfoDto.setMemberType("초급");
+		System.out.println("memDetInfoDto.getEmailCheck()==>" + memDetInfoDto.getEmailCheck());
+		try {
+			if (memDetInfoDto.getEmailCheck().equals("on")) {
+				System.out.println("on");
+				memDetInfoDto.setEmailCheck("receive");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			memDetInfoDto.setEmailCheck("noReceive");
+
+		}
+
 		System.out.println("memDetInfoDto=" + memDetInfoDto);
-		
+
 		System.out.println("MemberRegiController RequestMethod.POST 메서드 호출됨!");
 
 		// 정상적으로 에러가 발생이 되지 않고 입력을 완수 했다면
@@ -45,6 +61,25 @@ public class MemberRegiController {
 		// ModelAndView mav=new ModelAndView("redirect:/list.do")
 		return new ModelAndView("redirect:/restaurantMain.do");
 
-
 	}
+	
+	@RequestMapping("/dupliMemberCheck.do")
+	public String dupliIdCheck(HttpServletRequest request ,HttpServletResponse reponse) {
+		String id = request.getParameter("id");
+		String checkResult = "";
+		
+		System.out.println("dupliIdCheck id=>"+id);
+
+		// ex) Model 단에서 DB 조회
+
+		int memberCount = memberDao.checkIdMember(id);
+
+		if(memberCount >= 1)
+			checkResult="dupli";
+		else
+			checkResult="create";
+
+		return checkResult;
+	}
+
 }
