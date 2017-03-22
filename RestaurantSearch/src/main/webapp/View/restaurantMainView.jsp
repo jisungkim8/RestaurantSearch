@@ -78,7 +78,7 @@
 	$(document).ready(function() {
 		$("#searchBox").click(function() {
 			$(".subbox").toggle();
-			$("#wrapper").css('background-color','black');
+			/* $("#wrapper").css('background-color','black'); */
 		});
 
 			 
