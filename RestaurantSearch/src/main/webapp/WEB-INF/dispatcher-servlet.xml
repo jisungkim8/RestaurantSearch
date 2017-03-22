@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- @Autowired 및 기타 어노테이션 설정에 관련된 빈즈 클래스 등록  -->
+    <context:annotation-config/>
+    
+
+    <!-- viewResolver 설정 -->
+    <bean id="viewResolver"
+ class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/View/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    
+    <!-- 회원 목록보기  -->
+        <bean class="com.board.controller.ListController" />
+	<bean class="com.board.dao.BoardDaoImpl" />
+	<bean class="com.board.controller.WriteController" />
+	<bean class="com.board.controller.DetailController" />
+	<bean class="com.board.controller.UpdateController" />
+	<bean class="com.board.controller.DeleteController" />
+	<bean id="downloadView" class="com.board.view.DownloadView"></bean>
+    <bean class="restaurant.controller.MainViewController"/>
+    <bean class="restaurant.controller.MemberRegiController"/>
+    <bean class="restaurant.dao.MemberDaoImpl" />
+
+    
+    <!-- 1.messageSource(리소스번들 파일) 유효성검사 문자열 메세지,자주사용 문구-->
+    <bean id="messageSource"
+  class="org.springframework.context.support.ResourceBundleMessageSource">
+       <property name="basenames">
+          <list>
+              <value>messages.label</value>
+              <value>messages.validation</value>
+          </list>
+       </property>   
+   </bean>
+     
+     <!-- 2.예외처리 페이지 작성 설정  -->
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">pageError</prop>
+			</props>		
+		</property>
+	</bean>
+	
+	<!--파일업로드(maxUploadSize)최대업로드 용량크기(byte) ex)50M=51,200kB=52,428,800byte 
+		defaultEncoding->기본 캐릭터설정 -->
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="52428800" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<!-- 다운로드 viewResolver(order->같은 기능을 가진 클래스) -->
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
+		p:order="0"></bean>
+</beans>
