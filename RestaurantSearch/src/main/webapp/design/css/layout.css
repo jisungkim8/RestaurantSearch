@@ -41,6 +41,13 @@ body {
 	margin:0; padding:0 !important;
 }
 
+#darklayover{
+	padding:81px 0;
+	z-index:1000;
+	position:relative;
+	background-color: rgba(51, 0, 0, 0.8);
+}
+
 #wrapper {
 	padding:81px 0; 	/* top nav height */
 	z-index:98;			/* under top nav */
@@ -102,7 +109,7 @@ body {
 }
 
 header#topHead {
-	height:40px;
+	height:43px;
 	line-height:40px;
 	width:100%;
 
@@ -656,7 +663,7 @@ header#topNav li a i.fa {
 
 	#slider .image-caption .inner {
 		display:block;
-		padding:40px 0;
+		
 	}
 	#slider .image-caption .inner h1,
 	#slider .image-caption .inner h2,

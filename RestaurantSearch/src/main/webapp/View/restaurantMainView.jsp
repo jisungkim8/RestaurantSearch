@@ -74,12 +74,26 @@
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-<script>    
-$(document).ready(function () {
-   $("#searchBox").click(function(){
-       $(".subbox").show();
-   });
-});
+<script>
+	$(document).ready(function() {
+		$("#searchBox").click(function() {
+			$(".subbox").toggle();
+			$("#wrapper").css('background-color','black');
+		});
+
+			 
+
+		$(".popSearButton").click(function() {
+			$(".popSearButton").css('border-bottom', 'thick solid brown');
+			$(".relSearButton").css('border-bottom', 'thick solid grey');
+		})
+
+		$(".relSearButton").click(function() {
+			$(".popSearButton").css('border-bottom', 'thick solid grey');
+			$(".relSearButton").css('border-bottom', 'thick solid brown');
+		})
+
+	});
 </script>
 
 </head>
@@ -163,10 +177,10 @@ $(document).ready(function () {
 	<span id="header_shadow"></span>
 	<!-- /TOP NAV -->
 
-
+<!-- <div id="darkLayover"> -->
 	<!-- WRAPPER -->
 	<div id="wrapper">
-
+		
 		<!-- SLIDER -->
 		<section id="slider" class="half-screen" data-autoplay="false"
 			data-mouseover-stop="false">
@@ -198,30 +212,24 @@ $(document).ready(function () {
 
 								</span>
 
-								<div class="subbox"> 
-									<div class="leftSearchBox">
-									
-										불고기<br>
-										한식 <br>
-										소개팅<br>
-										강남역<br>
-										라볶이		<br>								
-									</div>
-									<div class="rightSearchBox">
-										분위기 좋은<br>
-										삼대천왕<br>
-										헤헤후후<br>
-										관련검색<br>
-										여기에요<br>
-									</div>
-								</div>
+
 
 							</div>
+						</div>
+						<div class="subbox">
+							<button class="popSearButton">인기 검색어</button>
+							<button class="relSearButton">연관 검색어</button>
+
+							불고기<br> 한식 <br> 소개팅<br> 강남역<br> 라볶이 <br>
+
+							분위기 좋은<br> 삼대천왕<br> 헤헤후후<br> 관련검색<br> 여기에요<br>
+
 						</div>
 					</div> <!--<span class="overlay"></span>-->
 					<div
 						style="background-image: url('design/images/demo/realestate/1.jpg');"
 						class="fullscreen-img"></div>
+
 				</li>
 
 
@@ -773,6 +781,7 @@ $(document).ready(function () {
 		</section>
 
 
+	</div>
 	</div>
 	<!-- /WRAPPER -->
 

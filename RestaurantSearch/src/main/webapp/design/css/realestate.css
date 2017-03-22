@@ -116,11 +116,10 @@ figure.agent-figure.pull-right {
 }
 
 .subbox {
-	border: 2px solid #8080ff;
-	width: 80%; height: 150px;
-	border-radius: 10px;
-	margin-left: 28px;
-	z-index:0;
+	/* border: 2px solid; */
+	background-color: rgba(255,255,255,0.9);
+	width: 100%; height: 150px;
+	z-index:101;
 	position:relative;
 	color:black !important;
 	display: none;
@@ -131,7 +130,7 @@ figure.agent-figure.pull-right {
 	width: 50%; height: 150px;
 	border-radius: 10px;
 	
-	z-index:0;
+	
 	position:relative;
 	color:black !important;
 	float:left;
@@ -144,12 +143,38 @@ figure.agent-figure.pull-right {
 	width: 50%; height: 150px;
 	border-radius: 10px;
 	
-	z-index:0;
+
 	position:relative;
 	color:black !important;
 	float:right;
 	padding-top:15px;
 	padding-bottom:15px;
+}
+
+.popSearButton{
+	background-color:white;
+	border-bottom:thick solid brown;
+	color:black;
+	text-align:center;
+	display:inline-block;
+	font-size:16px;
+	float:left;
+	width:50%;
+	height:30px;
+	border-radius:10px;
+}
+
+.relSearButton{
+	background-color:white;
+	border-bottom:thick solid grey;
+	color:black;
+	text-align:center;
+	display:inline-block;
+	font-size:16px;
+	float:left;
+	width:50%;
+	height:30px;
+	border-radius:10px;
 }
 
 /** Responsive
