@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>맛집검색 - 헤헤</title>
 
@@ -41,25 +42,60 @@
 	type="text/css" />
 <link href="design/css/color_scheme/orange.css" rel="stylesheet"
 	type="text/css" />
-	
+
 <!-- styleswitcher - demo only -->
-<link href="design/css/color_scheme/orange.css" rel="alternate stylesheet" type="text/css" title="orange" />
-<link href="design/css/color_scheme/red.css" rel="alternate stylesheet" type="text/css" title="red" />
-<link href="design/css/color_scheme/pink.css" rel="alternate stylesheet" type="text/css" title="pink" />
-<link href="design/css/color_scheme/yellow.css" rel="alternate stylesheet" type="text/css" title="yellow" />
-<link href="design/css/color_scheme/darkgreen.css" rel="alternate stylesheet" type="text/css" title="darkgreen" />
-<link href="design/css/color_scheme/green.css" rel="alternate stylesheet" type="text/css" title="green" />
-<link href="design/css/color_scheme/darkblue.css" rel="alternate stylesheet" type="text/css" title="darkblue" />
-<link href="design/css/color_scheme/blue.css" rel="alternate stylesheet" type="text/css" title="blue" />
-<link href="design/css/color_scheme/brown.css" rel="alternate stylesheet" type="text/css" title="brown" />
-<link href="design/css/color_scheme/lightgrey.css" rel="alternate stylesheet" type="text/css" title="lightgrey" />
+<link href="design/css/color_scheme/orange.css"
+	rel="alternate stylesheet" type="text/css" title="orange" />
+<link href="design/css/color_scheme/red.css" rel="alternate stylesheet"
+	type="text/css" title="red" />
+<link href="design/css/color_scheme/pink.css" rel="alternate stylesheet"
+	type="text/css" title="pink" />
+<link href="design/css/color_scheme/yellow.css"
+	rel="alternate stylesheet" type="text/css" title="yellow" />
+<link href="design/css/color_scheme/darkgreen.css"
+	rel="alternate stylesheet" type="text/css" title="darkgreen" />
+<link href="design/css/color_scheme/green.css"
+	rel="alternate stylesheet" type="text/css" title="green" />
+<link href="design/css/color_scheme/darkblue.css"
+	rel="alternate stylesheet" type="text/css" title="darkblue" />
+<link href="design/css/color_scheme/blue.css" rel="alternate stylesheet"
+	type="text/css" title="blue" />
+<link href="design/css/color_scheme/brown.css"
+	rel="alternate stylesheet" type="text/css" title="brown" />
+<link href="design/css/color_scheme/lightgrey.css"
+	rel="alternate stylesheet" type="text/css" title="lightgrey" />
 <!-- /styleswitcher - demo only -->
 
 <!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
 <!-- <link href="design/plugins/styleswitcher/styleswitcher.css" rel="stylesheet" type="text/css" />		 -->
-	
+
 <!-- Morenizr -->
 <script type="text/javascript" src="design/plugins/modernizr.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("#searchBox").click(function() {
+			$(".subbox").toggle();
+			$("#wrapper").css('background-color','black');
+		});
+
+			 
+
+		$(".popSearButton").click(function() {
+			$(".popSearButton").css('border-bottom', 'thick solid brown');
+			$(".relSearButton").css('border-bottom', 'thick solid grey');
+		})
+
+		$(".relSearButton").click(function() {
+			$(".popSearButton").css('border-bottom', 'thick solid grey');
+			$(".relSearButton").css('border-bottom', 'thick solid brown');
+		})
+
+	});
+</script>
+
 </head>
 <body>
 	<!-- Available classes for body: boxed , pattern1...pattern10 . Background Image - example add: data-background="design/images/boxed_background/1.jpg"  -->
@@ -82,62 +118,69 @@
 			<!-- Top Nav -->
 			<!-- <div class="navbar-collapse nav-main-collapse collapse pull-right">
 				<button type="button" class="btn btn-danger">회원가입</button>
-				<button type="button" class="btn btn-success">로그인</button> -->  <!-- SIGN IN -->
-				<div class="pull-right nav signin-dd">
-					<a id="quick_sign_in" href="page-signin.html" data-toggle="dropdown"><span class="btn btn-success">로그인</span></a>
-					<div class="dropdown-menu" role="menu" aria-labelledby="quick_sign_in">
+				<button type="button" class="btn btn-success">로그인</button> -->
+			<!-- SIGN IN -->
+			<div class="pull-right nav signin-dd">
+				<a id="quick_sign_in" href="page-signin.html" data-toggle="dropdown"><span
+					class="btn btn-success">로그인</span></a>
+				<div class="dropdown-menu" role="menu"
+					aria-labelledby="quick_sign_in">
 
-						<h4>Sign In</h4>
-						<form action="page-signin.html" method="post" role="form">
+					<h4>Sign In</h4>
+					<form action="page-signin.html" method="post" role="form">
 
-							<div class="form-group"><!-- email -->
-								<input required type="email" class="form-control" placeholder="Username or email">
-							</div>
+						<div class="form-group">
+							<!-- email -->
+							<input required type="email" class="form-control"
+								placeholder="Username or email">
+						</div>
 
-							<div class="input-group">
+						<div class="input-group">
 
-								<!-- password -->
-								<input required type="password" class="form-control" placeholder="Password">
-								
-								<!-- submit button -->
-								<span class="input-group-btn">
-									<button class="btn btn-primary btn-xs">로그인</button>
-								</span>
+							<!-- password -->
+							<input required type="password" class="form-control"
+								placeholder="Password">
 
-							</div>
+							<!-- submit button -->
+							<span class="input-group-btn">
+								<button class="btn btn-primary btn-xs">로그인</button>
+							</span>
 
-							<div class="checkbox"><!-- remmember -->
-								<label>
-									<input type="checkbox"> Remember me &bull; <a href="page-signin.html">Forgot password?</a>
-								</label>
-							</div>
+						</div>
 
-						</form>
+						<div class="checkbox">
+							<!-- remmember -->
+							<label> <input type="checkbox"> Remember me
+								&bull; <a href="page-signin.html">Forgot password?</a>
+							</label>
+						</div>
 
-						<hr />
-						
+					</form>
+
+					<hr />
+
 					<!-- <a href="#" class="btn-facebook fullwidth radius3"><i class="fa fa-facebook"></i> Connect With Facebook</a>
 						<a href="#" class="btn-twitter fullwidth radius3"><i class="fa fa-twitter"></i> Connect With Twitter</a> -->
-						<!--<a href="#" class="btn-google-plus fullwidth radius3"><i class="fa fa-google-plus"></i> Connect With Google</a>-->
+					<!--<a href="#" class="btn-google-plus fullwidth radius3"><i class="fa fa-google-plus"></i> Connect With Google</a>-->
 
-						<p class="bottom-create-account">
-							<a href="memberRegister.do">회원 가입</a>
-						</p>
-					</div>
+					<p class="bottom-create-account">
+						<a href="memberRegister.do">회원 가입</a>
+					</p>
 				</div>
-				<!-- /SIGN IN -->
 			</div>
+			<!-- /SIGN IN -->
+		</div>
 
-	<!-- 		</div> -->
+		<!-- 		</div> -->
 	</header>
 
 	<span id="header_shadow"></span>
 	<!-- /TOP NAV -->
 
-
+<!-- <div id="darkLayover"> -->
 	<!-- WRAPPER -->
 	<div id="wrapper">
-
+		
 		<!-- SLIDER -->
 		<section id="slider" class="half-screen" data-autoplay="false"
 			data-mouseover-stop="false">
@@ -162,19 +205,31 @@
 								<p>무엇을 찾고 계신가요?</p>
 								<span class="price"> 강남역, 혼자, 점심 <span class="price-old">강남역에서
 										점심을 혼자 먹으려고 하는데..</span> <br> <input type="text"
-									class="input_text" /> <!-- view more button -->
+									class="input_text" id="searchBox" /> <!-- view more button -->
 									<button type="submit"
 										class="btn btn-default btn-m view-more pull-right">검색</button>
 									<span class="clearfix"></span> <!-- /view more button -->
 
 								</span>
 
+
+
 							</div>
+						</div>
+						<div class="subbox">
+							<button class="popSearButton">인기 검색어</button>
+							<button class="relSearButton">연관 검색어</button>
+
+							불고기<br> 한식 <br> 소개팅<br> 강남역<br> 라볶이 <br>
+
+							분위기 좋은<br> 삼대천왕<br> 헤헤후후<br> 관련검색<br> 여기에요<br>
+
 						</div>
 					</div> <!--<span class="overlay"></span>-->
 					<div
 						style="background-image: url('design/images/demo/realestate/1.jpg');"
 						class="fullscreen-img"></div>
+
 				</li>
 
 
@@ -726,6 +781,7 @@
 		</section>
 
 
+	</div>
 	</div>
 	<!-- /WRAPPER -->
 
