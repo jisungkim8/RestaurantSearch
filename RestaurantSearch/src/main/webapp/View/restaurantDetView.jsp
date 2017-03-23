@@ -277,7 +277,13 @@
 													<label>한줄 설명</label>
 													<div class="toggle-content">
 														<p>
-															${shopDetInfoDto.shortDesc}
+															<c:if test="${shopDetInfoDto.shortDesc == null}">
+																등록된 사진이 없습니다.
+															</c:if>
+															
+															<c:if test="${shopDetInfoDto.shortDesc != null}">
+																${shopDetInfoDto.shortDesc}
+															</c:if>
 														</p>
 													</div>
 												</div>
