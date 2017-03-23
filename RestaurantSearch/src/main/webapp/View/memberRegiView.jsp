@@ -221,38 +221,38 @@ $(function(){
 		$("#rePassword").blur(function(){
 			if ($("#password").val() != $("#rePassword").val()) {
 				$("#passwordReCheckMessage").html("<font id='idColor' color='red'>패스워드가 일치하지 않습니다</font>");
-				return;
-			}
-		})
-		
-		$("#birthDate").blur(function(){
-			 if (!($("#birthDate").val())) {
-					$("#birthCheckMessage").html("<font id='idColor' color='red'>생년월일을 입력해주세요.</font>")
-				} else {
-					$("#birthCheckMessage").html("");
-				} 
-		}) // passwordCheck(blur)
-		
-		$("#phoneNum").blur(function(){
-			 if (!($("#phoneNum").val())) {
-					$("#phoneNumCheckMessage").html("<font id='idColor' color='red'>전화번호를 입력해주세요.</font>")
-				} else {
-					$("#phoneNumCheckMessage").html("");
-				} 
-		})
-		
-		$("#birthDate").blur(function(){
-			if ($("#password").val() != $("#rePassword").val()) {
-				$("#passwordReCheckMessage").html("<font id='idColor' color='red'>비밀번호가 일치하지 않습니다.</font>")
-			} else {
-				$("#passwordReCheckMessage").html("");
-			}
-		})
-		
-})
 
+	return;
+									} else {
+										$("#passwordReCheckMessage").html("");
+									}
+								})
 
+				$("#birthDate")
+						.blur(
+								function() {
+									if (!($("#birthDate").val())) {
+										$("#birthCheckMessage")
+												.html(
+														"<font id='idColor' color='red'>생년월일을 입력해주세요.</font>")
+									} else {
+										$("#birthCheckMessage").html("");
+									}
+								}) // passwordCheck(blur)
 
+				$("#phoneNum")
+						.blur(
+								function() {
+									if (!($("#phoneNum").val())) {
+										$("#phoneNumCheckMessage")
+												.html(
+														"<font id='idColor' color='red'>전화번호를 입력해주세요.</font>")
+									} else {
+										$("#phoneNumCheckMessage").html("");
+									}
+								})
+
+			})
 </script>
 </head>
 <body>
