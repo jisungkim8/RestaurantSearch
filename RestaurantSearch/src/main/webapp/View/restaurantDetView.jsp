@@ -11,7 +11,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>
-			식당 상세보기
+			${restaurantDto.restaurantName}
 		</title>
 		<meta name="keywords" content="HTML5,CSS3,Template" />
 		<meta name="description" content="" />
