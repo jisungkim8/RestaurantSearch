@@ -78,21 +78,25 @@
 <!-- Morenizr -->
 <!-- <script type="text/javascript" src="design/plugins/modernizr.min.js"></script> -->
 <script src="/RestaurantSearch/lib/jquery-1.11.0.min.js"></script>
-<script language="JavaScript" src="script.js"></script>
 <script>
 
+
+
 function memberReg(id){  //서버에 요청하는 문서이름을 매개변수 2)
-		alert("중복 id 체크 "+id)
+	var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;	
 		
    if(id==""){
 	   //document.getElementById("ducheck")=>$("ducheck")
-	   alert("id가 비었음")
-	   $("#memberIdTxt").innerHTML="<font color='red'>"+
-	   "먼저 아이디를 입력하세요</font>";
+	   $("#memberIdTxt").innerHTML="<font color='red'>"+ "먼저 이메일를 입력하세요</font>";
 	   $("#memberId").focus();//커서입력
-	   return false;
-   }
-   
+	   return;
+   }else if(!regEmail.test(id)) {
+    	  $("#memberIdTxt").innerHTML="<font color='red'>"+  "이메일 주소가 유효하지 않습니다.</font>";
+	      $("#memberId").focus();
+	      //history.back();
+	      return;
+	}
+      
 	$.ajax({
     		url:'/RestaurantSearch/dupliMemberCheck.do', //요청문서를 지정할때 사용하는 키명(url):요청문서명
     		//2.data:{매개변수명:값,매개변수명2:값2,,,,}
@@ -100,7 +104,11 @@ function memberReg(id){  //서버에 요청하는 문서이름을 매개변수 2
     		type : "POST",
     		//3.success:콜백함수명(매개변수)
     		success:function(args){
-    			alert("args===>"+args);
+    			if(args=="create"){
+    				$("#memberIdTxt").html("<font id='idColor' color='red'>사용 가능한 이메일입니다.</font>")
+    			}else{
+    				$("#memberIdTxt").html("<font id='idColor' color='red'>사용 불가능한 이메일입니다.</font>")
+    			}
     		}
     	})//$.ajax
 }
@@ -226,11 +234,31 @@ $(function(){
 		})
 		
 		$("#birthDate").blur(function(){
+			alert("asdf");
+			var birthDateVal = $("#birthDate").val();
+			alert($("#birthDate").val().substring(0,4)+"월"+$("#birthDate").val().substring(4,6)+"일"+$('#birthDate').val().substring(6,8));
+			var birthDateCheck = {number:false }
+			
+			for (i=0; i< birthDateVal.length; i++) {
+				if (birthDateVal.charAt(i)>=0 && birthDateVal.charAt(i)<=9) {
+					birthDateCheck["number"]=true;
+				}
+			}
+			
+			var birthLength=birthDateVal.length;
+			alert("생일길이=>"+birthLength);
+			var year=parseInt(birthDateVal.substring(0,4))
+			var month=parseInt(birthDateVal.substring(4,6))
+			var day=parseInt(birthDateVal.substring(6,8))
+			
 			 if (!($("#birthDate").val())) {
 					$("#birthCheckMessage").html("<font id='idColor' color='red'>생년월일을 입력해주세요.</font>")
-				} else {
-					$("#birthCheckMessage").html("");
-				} 
+			 }else if( birthLength!=8 || year<1920 || year>2017 || month>12 || day > 31 || (birthDateCheck["number"] != true) ){
+					$("#birthCheckMessage").html("<font id='idColor' color='red'>생년월일이 정확하지 않습니다.</font>")
+			 }else{
+					$("#birthCheckMessage").html("")
+			 }
+			 
 		}) // passwordCheck(blur)
 		
 		$("#phoneNum").blur(function(){
@@ -241,13 +269,13 @@ $(function(){
 				} 
 		})
 		
-		$("#birthDate").blur(function(){
+		/* $("#birthDate").blur(function(){
 			if ($("#password").val() != $("#rePassword").val()) {
 				$("#passwordReCheckMessage").html("<font id='idColor' color='red'>비밀번호가 일치하지 않습니다.</font>")
 			} else {
 				$("#passwordReCheckMessage").html("");
 			}
-		})
+		}) */
 		
 })
 

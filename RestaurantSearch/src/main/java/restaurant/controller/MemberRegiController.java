@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import restaurant.dao.MemberDao;
@@ -63,12 +64,13 @@ public class MemberRegiController {
 
 	}
 	
-	@RequestMapping("/dupliMemberCheck.do")
-	public String dupliIdCheck(HttpServletRequest request ,HttpServletResponse reponse) {
+	@RequestMapping("dupliMemberCheck.do")
+	@ResponseBody
+	public String dupliIdCheck(HttpServletRequest request ,HttpServletResponse response) {
 		String id = request.getParameter("id");
 		String checkResult = "";
 		
-		System.out.println("dupliIdCheck id=>"+id);
+		System.out.println(" dupliIdCheck dupliIdCheck id=>"+id);
 
 		// ex) Model 단에서 DB 조회
 
@@ -78,6 +80,7 @@ public class MemberRegiController {
 			checkResult="dupli";
 		else
 			checkResult="create";
+		
 
 		return checkResult;
 	}
