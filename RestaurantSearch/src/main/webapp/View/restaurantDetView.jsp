@@ -278,7 +278,7 @@
 													<div class="toggle-content">
 														<p>
 															<c:if test="${shopDetInfoDto.shortDesc == null}">
-																한줄 설명이 없습니다.
+																등록된 한줄 설명이 없습니다.
 															</c:if>
 															
 															<c:if test="${shopDetInfoDto.shortDesc != null}">
