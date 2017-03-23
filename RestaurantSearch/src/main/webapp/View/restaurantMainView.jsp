@@ -81,8 +81,6 @@
 			/* $("#wrapper").css('background-color','black'); */
 		});
 
-			 
-
 		$(".popSearButton").click(function() {
 			$(".popSearButton").css('border-bottom', 'thick solid brown');
 			$(".relSearButton").css('border-bottom', 'thick solid grey');
@@ -92,9 +90,12 @@
 			$(".popSearButton").css('border-bottom', 'thick solid grey');
 			$(".relSearButton").css('border-bottom', 'thick solid brown');
 		})
-
+		
 	});
+	
+
 </script>
+
 
 </head>
 <body>
@@ -177,10 +178,10 @@
 	<span id="header_shadow"></span>
 	<!-- /TOP NAV -->
 
-<!-- <div id="darkLayover"> -->
+	<!-- <div id="darkLayover"> -->
 	<!-- WRAPPER -->
 	<div id="wrapper">
-		
+
 		<!-- SLIDER -->
 		<section id="slider" class="half-screen" data-autoplay="false"
 			data-mouseover-stop="false">
@@ -204,10 +205,13 @@
 								<h4>Florida 5, Pinecrest, FL</h4>
 								<p>무엇을 찾고 계신가요?</p>
 								<span class="price"> 강남역, 혼자, 점심 <span class="price-old">강남역에서
-										점심을 혼자 먹으려고 하는데..</span> <br> <input type="text"
-									class="input_text" id="searchBox" /> <!-- view more button -->
-									<button type="submit"
-										class="btn btn-default btn-m view-more pull-right">검색</button>
+										점심을 혼자 먹으려고 하는데..</span> <br> 
+										<form action="restaurantSearch.do" method="post">
+										<input type="text"
+									class="input_text" id="searchBox" name="keyword" /> <!-- view more button -->
+									<input type="submit" value="검색"
+										class="btn btn-default btn-m view-more pull-right">
+										</form>
 									<span class="clearfix"></span> <!-- /view more button -->
 
 								</span>
@@ -237,133 +241,6 @@
 
 		</section>
 		<!-- /SLIDER -->
-
-
-
-		<!-- FILTER BOX -->
-		<section class="container re-filterbox no-top">
-			<!-- add "styleBackground" class for colored box -->
-
-			<form id="re-filter" action="realestate-list.html" method="get">
-				<div class="row">
-					<div class="form-group">
-
-						<div class="col-md-2 col-sm-6 col-xs-12">
-							<label>Property ID</label> <input type="text"
-								class="form-control" name="re_id" />
-						</div>
-
-						<div class="col-md-4 col-sm-6 col-xs-12">
-							<label>Location</label> <select class="form-control"
-								name="re_location">
-								<option value="0">Any</option>
-								<option value="1">New York</option>
-								<option value="2">Los Angeles</option>
-								<option value="3">Las Vegas</option>
-								<option value="4">Palo Alto, SA</option>
-								<option value="5">Silcon Valey, SA</option>
-							</select>
-						</div>
-						<div class="col-md-3 col-sm-6 col-xs-12">
-							<label>Type</label> <select class="form-control" name="re_type">
-								<option value="0">Any</option>
-								<option value="1">Apartment</option>
-								<option value="2">Villa</option>
-								<option value="3">Family House</option>
-								<option value="4">Condo</option>
-								<option value="5">Cottage</option>
-								<option value="6">Building Area</option>
-								<option value="7">Single Home</option>
-							</select>
-						</div>
-						<div class="col-md-3 col-sm-6 col-xs-12">
-							<label>Property Status</label> <select class="form-control"
-								name="re_status">
-								<option value="0">Any</option>
-								<option value="1">Rent</option>
-								<option value="2">Sale</option>
-							</select>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="form-group">
-
-						<div class="col-md-2 col-sm-6 col-xs-6">
-							<label>Beds</label> <select class="form-control" name="re_beds">
-								<option value="0">Any</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10+">10+</option>
-							</select>
-						</div>
-						<div class="col-md-2 col-sm-6 col-xs-6">
-							<label>Baths</label> <select class="form-control" name="re_baths">
-								<option value="0">Any</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10+">10+</option>
-							</select>
-						</div>
-						<div class="col-md-2 col-sm-6 col-xs-6">
-							<label>Price From</label> <select class="form-control"
-								name="re_price_from">
-								<option value="0">Any</option>
-								<option value="1000">$1000</option>
-								<option value="2000">$2000</option>
-								<option value="3000">$3000</option>
-								<option value="5000">$5000</option>
-								<option value="10000">$10000</option>
-								<option value="2000">$2000</option>
-								<option value="100000">$100000</option>
-								<option value="300000">$300000</option>
-								<option value="1000000+">1000000+</option>
-							</select>
-						</div>
-						<div class="col-md-2 col-sm-6 col-xs-6">
-							<label>Price To</label> <select class="form-control"
-								name="re_price_to">
-								<option value="0">Any</option>
-								<option value="1000">$1000</option>
-								<option value="2000">$2000</option>
-								<option value="3000">$3000</option>
-								<option value="5000">$5000</option>
-								<option value="10000">$10000</option>
-								<option value="2000">$2000</option>
-								<option value="100000">$100000</option>
-								<option value="300000">$300000</option>
-								<option value="1000000+">1000000+</option>
-							</select>
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-							<label>&nbsp;</label>
-							<button class="btn btn-primary fullwidth">FILTER NOW</button>
-						</div>
-					</div>
-				</div>
-
-			</form>
-
-
-		</section>
-		<!-- /FILTER BOX -->
-
 
 
 		<section class="container">
