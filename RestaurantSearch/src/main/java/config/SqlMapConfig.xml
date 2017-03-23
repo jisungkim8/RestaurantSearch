@@ -4,21 +4,23 @@
 
 <configuration>
 
-    <!-- DTO의 별칭부여 -->
+	<!-- DTO의 별칭부여 -->
 	<typeAliases>
-	   <typeAlias alias="RestaurantDto" 
-	                    type="restaurant.dto.RestaurantDto"/>
-	   <typeAlias alias="MemDetInfoDto" 
-	                    type="restaurant.dto.MemDetInfoDto"/>
-	   <typeAlias alias="MemSimInfoDto" 
-	                    type="restaurant.dto.MemSimInfoDto"/>                 
-	                    
-	</typeAliases> 
-	
-	<!-- 불러올 테이블의 정보(xml파일)  -->
+		<typeAlias alias="MemDetInfoDto" type="restaurant.dto.MemDetInfoDto" />
+		<typeAlias alias="MemSimInfoDto" type="restaurant.dto.MemSimInfoDto" />
+		<typeAlias alias="RestaurantDto" type="restaurant.dto.RestaurantDto" />
+		<typeAlias alias="ShopDetInfoDto" type="restaurant.dto.ShopDetInfoDto" />
+		<typeAlias alias="ShopPhotoDto" type="restaurant.dto.ShopPhotoDto" />
+
+	</typeAliases>
+
+	<!-- 불러올 테이블의 정보(xml파일) -->
 	<mappers>
-	    <mapper resource="restaurant/query/restaurantQuery.xml"/>
-	    <mapper resource="restaurant/query/memDetInfoQuery.xml"/>
-	</mappers> 
-	
+		<mapper resource="restaurant/query/memDetInfoQuery.xml" />
+		<mapper resource="restaurant/query/memSimInfoQuery.xml" />
+		<mapper resource="restaurant/query/restaurantQuery.xml" />
+		<mapper resource="restaurant/query/shopDetInfoQuery.xml" />
+		<mapper resource="restaurant/query/shopPhotoQuery.xml" />
+	</mappers>
+
 </configuration>

@@ -385,7 +385,7 @@
 							<!-- item -->
 							<div class="item-box">
 								<figure>
-									<a class="item-hover" href="realestate-single.html"> <span
+									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
 											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
 											OFFER
@@ -417,7 +417,7 @@
 							<!-- item -->
 							<div class="item-box">
 								<figure>
-									<a class="item-hover" href="realestate-single.html"> <span
+									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
 											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
 											OFFER
@@ -449,7 +449,7 @@
 							<!-- item -->
 							<div class="item-box">
 								<figure>
-									<a class="item-hover" href="realestate-single.html"> <span
+									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
 											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
 											OFFER
@@ -481,7 +481,7 @@
 							<!-- item -->
 							<div class="item-box">
 								<figure>
-									<a class="item-hover" href="realestate-single.html"> <span
+									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
 											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
 											OFFER
@@ -524,7 +524,7 @@
 							<!-- item -->
 							<div class="item-box">
 								<figure>
-									<a class="item-hover" href="realestate-single.html"> <span
+									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
 											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
 											OFFER
@@ -550,7 +550,7 @@
 							<!-- item -->
 							<div class="item-box">
 								<figure>
-									<a class="item-hover" href="realestate-single.html"> <span
+									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
 											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
 											OFFER
@@ -576,7 +576,7 @@
 							<!-- item -->
 							<div class="item-box">
 								<figure>
-									<a class="item-hover" href="realestate-single.html"> <span
+									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
 											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
 											OFFER
@@ -612,7 +612,7 @@
 					<!-- No #1 Hot -->
 					<div class="item-box nomargin-top">
 						<figure>
-							<a class="item-hover" href="realestate-single.html"> <span
+							<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 								class="overlay color2"></span> <span class="inner"> <span
 									class="block fa fa-plus fsize20"></span> <strong>VEW</strong>
 									OFFER

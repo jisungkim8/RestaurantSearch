@@ -1,79 +1,54 @@
 package restaurant.dto;
 
-import java.sql.Date;
-import org.springframework.web.multipart.MultipartFile;
-
-//Springboard2테이블->필드와 매핑
-
 public class RestaurantDto {
-	private int seq;
-	private String writer,title,content,pwd;
-	private int hit; //조회수
-	private Date regdate;//작성날짜
-	//업로드->경로,파일명->MultipartFile 클래스를 이용
-	private MultipartFile upload;
-	//---------------------------------------------------------
-	private String filename; //업로드할 파일명
+	int restaurantId;
+	String restaurantName;
+	String addr;
+	String phoneNumber;
+	String representPhoto;
+	String keyword;
+	int foodId;
 	
-	public int getSeq() {
-		return seq;
+	public int getRestaurantId() {
+		return restaurantId;
 	}
-	public void setSeq(int seq) {
-		this.seq = seq;
+	public void setRestaurantId(int restaurantId) {
+		this.restaurantId = restaurantId;
 	}
-	public String getWriter() {
-		return writer;
+	public String getRestaurantName() {
+		return restaurantName;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setRestaurantName(String restaurantName) {
+		this.restaurantName = restaurantName;
 	}
-	public String getTitle() {
-		return title;
+	public String getAddr() {
+		return addr;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setAddr(String addr) {
+		this.addr = addr;
 	}
-	public String getContent() {
-		return content;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
-	public String getPwd() {
-		return pwd;
+	public String getRepresentPhoto() {
+		return representPhoto;
 	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setRepresentPhoto(String representPhoto) {
+		this.representPhoto = representPhoto;
 	}
-	public int getHit() {
-		return hit;
+	public String getKeyword() {
+		return keyword;
 	}
-	public void setHit(int hit) {
-		this.hit = hit;
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
 	}
-	public Date getRegdate() {
-		return regdate;
+	public int getFoodId() {
+		return foodId;
 	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
+	public void setFoodId(int foodId) {
+		this.foodId = foodId;
 	}
-	public MultipartFile getUpload() {
-		return upload;
-	}
-	public void setUpload(MultipartFile upload) {
-		this.upload = upload;
-	}
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-	
-	public String toString(){
-		return "BoardCommand[seq="+seq+",writer="+writer+",title="+title+
-				",content="+content+",pwd="+pwd+",hit="+hit+"regdate="+regdate+",upload="+upload
-				+",filename="+filename+"]";	
-		}
-
 }
