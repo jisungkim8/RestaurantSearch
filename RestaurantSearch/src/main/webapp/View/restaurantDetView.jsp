@@ -278,7 +278,7 @@
 													<div class="toggle-content">
 														<p>
 															<c:if test="${shopDetInfoDto.shortDesc == null}">
-																등록된 사진이 없습니다.
+																한줄 설명이 없습니다.
 															</c:if>
 															
 															<c:if test="${shopDetInfoDto.shortDesc != null}">
