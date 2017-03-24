@@ -105,12 +105,16 @@ function memberReg(id){  //서버에 요청하는 문서이름을 매개변수 2
     		//3.success:콜백함수명(매개변수)
     		success:function(args){
     			if(args=="create"){
+    				alert("가능")
     				$("#memberIdTxt").html("<font id='idColor' color='red'>사용 가능한 이메일입니다.</font>")
-    			}else{
+     			}else{
+    				alert("불가능")
     				$("#memberIdTxt").html("<font id='idColor' color='red'>사용 불가능한 이메일입니다.</font>")
+    				$("#memberId").focus();
     			}
     		}
     	})//$.ajax
+    	
 }
 
 $(function(){
@@ -135,7 +139,8 @@ $(function(){
 		      $("#memberId").focus();
 		      //history.back();
 		      return;
-		}
+		}		
+		
 		
 		if (!($("#password").val())) {
 		      alert("패스워드를 입력하여 주세요. 필수 입력사항입니다.")
@@ -171,7 +176,25 @@ $(function(){
 			return;
 		}
 		
-		document.registerMem.submit();
+		$.ajax({
+    		url:'/RestaurantSearch/dupliMemberCheck.do', //요청문서를 지정할때 사용하는 키명(url):요청문서명
+    		//2.data:{매개변수명:값,매개변수명2:값2,,,,}
+    		data:{id:$("#memberId").val()},
+    		type : "POST",
+    		//3.success:콜백함수명(매개변수)
+    		success:function(args){
+    			if(args=="create"){
+    				alert("가능")
+    				$("#memberIdTxt").html("<font id='idColor' color='red'>사용 가능한 이메일입니다.</font>")
+    		    	document.registerMem.submit();
+     			}else{
+    				alert("불가능")
+    				$("#memberIdTxt").html("<font id='idColor' color='red'>사용 불가능한 이메일입니다.</font>")
+    				$("#memberId").focus();
+    				return;
+    			}
+    		}
+    	})
 	})
 	
 	
@@ -239,38 +262,53 @@ $(function(){
 			//alert($("#birthDate").val().substring(0,4)+"월"+$("#birthDate").val().substring(4,6)+"일"+$('#birthDate').val().substring(6,8));
 			var birthDateCheck = {number:false }
 			
-			for (i=0; i< birthDateVal.length; i++) {
-				if (birthDateVal.charAt(i)>=0 && birthDateVal.charAt(i)<=9) {
-					birthDateCheck["number"]=true;
-				}
-			}
-			
 			var birthLength=parseInt(birthDateVal.length);
 			//alert("생일길이=>"+birthLength);
 			var year=parseInt($("#birthDate").val().substring(0,4))
 			var month=parseInt($("#birthDate").val().substring(4,6))
 			var day=parseInt($("#birthDate").val().substring(6,8))
+			
 			//alert("birthLength"+birthLength+"birthLength="+birthLength+"year"+year+"month"+month+"day"+day);
+			alert("birthDateCheck[number]=>"+birthDateCheck["number"] )
 			
 			 if (!($("#birthDate").val())) {
 				// alert("1")
 					$("#birthCheckMessage").html("<font id='idColor' color='red'>생년월일을 입력해주세요.</font>")
-			 }else if( birthLength!=8 || year<1920 || year>2017 || month>12 || day > 31 ){
+			 }else if( birthLength!=8 || year<1920 || year>2017 || month>12 || day > 31){
 				 //alert("2")
 					$("#birthCheckMessage").html("<font id='idColor' color='red'>생년월일이 정확하지 않습니다.</font>")
 			 }else{
 				 //alert("3")
 					$("#birthCheckMessage").html("")
 			 }
+			
+			for (i=0; i< birthDateVal.length; i++) {
+				//alert("birthDateVal.charAt(i)==> "+birthDateVal.charAt(i))
+				if (!(birthDateVal.charAt(i)>=0 && birthDateVal.charAt(i)<=9)) {
+					//alert("생년월일에 문자가 들어감")
+					$("#birthCheckMessage").html("<font id='idColor' color='red'>생년월일이 정확하지 않습니다.</font>")
+				}
+			}
 			 
 		}) // passwordCheck(blur)
 		
 		$("#phoneNum").blur(function(){
-			 if (!($("#phoneNum").val())) {
+			var phoneNumVal=$("#phoneNum").val();
+			
+			if (!(phoneNumVal)) {
 					$("#phoneNumCheckMessage").html("<font id='idColor' color='red'>전화번호를 입력해주세요.</font>")
-				} else {
+			}else {
 					$("#phoneNumCheckMessage").html("");
-				} 
+			} 
+			
+			
+			for (i=0; i< phoneNumVal.length; i++) {
+				//alert("birthDateVal.charAt(i)==> "+birthDateVal.charAt(i))
+				if (!(phoneNumVal.charAt(i)>=0 && phoneNumVal.charAt(i)<=9)) {
+					alert("전화번호에 문자가 들어감")
+					$("#phoneNumCheckMessage").html("<font id='idColor' color='red'>전화번호가 정확 하지 않습니다.</font>")
+				}
+			}
 		})
 		
 })
@@ -876,7 +914,7 @@ $(function(){
 								<div class="col-md-6">
 									이메일<br>
 									<input type="text" id="memberId" name="memberId"
-										value="${memDetInfoDto.memberId}" class="form-control" placeholder="이메일을 입력하세요.[필수]">
+										class="form-control" placeholder="이메일을 입력하세요.[필수]">
 										<table><tr><td id="memberIdTxt" ></td></tr></table>
 								</div>
 								<div class="col-md-6">
@@ -890,7 +928,7 @@ $(function(){
 							<div class="form-group">
 								<div class="col-md-6">
 									<label>패스워드</label> <input type="password" id="password" name="password"
-										value="${memSimInfoDto.password}" class="form-control" placeholder="6자리 이상의 숫자,문자,특수기호를 포함하세요.[필수]">
+										class="form-control" placeholder="6자리 이상의 숫자,문자,특수기호를 포함하세요.[필수]">
 										<table><tr><td id="passwordCheckMessage" ></td></tr></table>
 								</div>
 								<div class="col-md-6">
@@ -905,7 +943,7 @@ $(function(){
 							<div class="form-group">
 								<div class="col-md-12">
 									<label>생년월일</label> <input type="text" id="birthDate" name="birthDate"
-										value="${memDetInfoDto.birthDate}" class="form-control" placeholder="생년월일 숫자8자리를 입력하세요. ex) 20010101 [필수]">
+										 class="form-control" placeholder="생년월일 숫자8자리를 입력하세요. ex) 20010101 [필수]">
 									<table><tr><td id="birthCheckMessage" ></td></tr></table>
 								</div>
 							</div>
@@ -915,7 +953,7 @@ $(function(){
 							<div class="form-group">
 								<div class="col-md-8">
 									<label>전화번호</label> <input type="text" id="phoneNum" name="phoneNum"
-										value="${memDetInfoDto.phoneNum}" class="form-control" placeholder="- 없이 전화번호를 입력하여 주세요.[필수]">
+										 class="form-control" placeholder="- 없이 전화번호를 입력하여 주세요.[필수]">
 									<tr><td id="phoneCheckMessage" class="check" colspan="3"></td></tr>
 										<table><tr><td id="phoneNumCheckMessage" ></td></tr></table>
 								</div>
@@ -923,6 +961,7 @@ $(function(){
 									<label>성별</label> <%-- <input type="text" name="gender"
 										value="${memDetInfoDto.gender}" class="form-control"> --%>
 									<select class="form-control" id="gender" name="gender">
+										<option>선택</option>
 										<option>남자</option>
 										<option>여자</option>
 									</select>
@@ -935,7 +974,7 @@ $(function(){
 						<div class="row">
 							<div class="form-group">
 								<div class="col-md-12">
-									<label>대표이미지</label> <input type="text" name="photoPath" value="${memDetInfoDto.phonePath}" 
+									<label>대표이미지</label> <input type="text" name="photoPath" 
 																		 class="form-control"  placeholder="대표이미지를 첨부하여 주세요.[선택]">
 								</div>
 							</div>
@@ -954,7 +993,7 @@ $(function(){
 							<div class="form-group">
 								<div class="col-md-12">
 									<label>관심음식</label> <input type="text" name="interestFood"
-										value="${memDetInfoDto.interestFood}" class="form-control" placeholder="좋아하거나 관심있는 음식을 입력하여 주세요.[선택]">
+										 class="form-control" placeholder="좋아하거나 관심있는 음식을 입력하여 주세요.[선택]">
 								</div>
 							</div>
 						</div>
@@ -963,7 +1002,7 @@ $(function(){
 							<div class="form-group">
 								<div class="col-md-12">
 									<label>닉네임</label> <input type="text" name="nickname"
-										value="${memDetInfoDto.nickname}" class="form-control" placeholder="닉네임을 입력하여 주세요.[선택]">
+										 class="form-control" placeholder="닉네임을 입력하여 주세요.[선택]">
 								</div>
 							</div>
 						</div>
@@ -983,7 +1022,7 @@ $(function(){
 								<div class="col-md-12">
 									<!-- <label>이메일 수신여부</label> -->
 										<div class="checkbox">
-  											<label><input type="checkbox" name="emailCheck" value="">이메일 수신여부</label>
+  											<label><input type="checkbox" name="emailCheck" value="수신" class="form-control">이메일 수신여부</label>
 										</div>
 									<%-- <input type="text" name="emailCheck"  value="${memDetInfoDto.emailCheck}" class="form-control"> --%>
 								</div>

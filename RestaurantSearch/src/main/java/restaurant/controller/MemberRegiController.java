@@ -42,15 +42,10 @@ public class MemberRegiController {
 
 		memDetInfoDto.setMemberType("초급");
 		System.out.println("memDetInfoDto.getEmailCheck()==>" + memDetInfoDto.getEmailCheck());
-		try {
-			if (memDetInfoDto.getEmailCheck().equals("on")) {
-				System.out.println("on");
-				memDetInfoDto.setEmailCheck("receive");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			memDetInfoDto.setEmailCheck("noReceive");
 
+		if (memDetInfoDto.getEmailCheck() == null) {
+			System.out.println("memDetInfoDto.getEmailCheck() == null");
+			memDetInfoDto.setEmailCheck("미수신");
 		}
 
 		System.out.println("memDetInfoDto=" + memDetInfoDto);
@@ -63,24 +58,23 @@ public class MemberRegiController {
 		return new ModelAndView("redirect:/restaurantMain.do");
 
 	}
-	
+
 	@RequestMapping("dupliMemberCheck.do")
 	@ResponseBody
-	public String dupliIdCheck(HttpServletRequest request ,HttpServletResponse response) {
+	public String dupliIdCheck(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
 		String checkResult = "";
-		
-		System.out.println(" dupliIdCheck dupliIdCheck id=>"+id);
+
+		System.out.println(" dupliIdCheck dupliIdCheck id=>" + id);
 
 		// ex) Model 단에서 DB 조회
 
 		int memberCount = memberDao.checkIdMember(id);
 
-		if(memberCount >= 1)
-			checkResult="dupli";
+		if (memberCount >= 1)
+			checkResult = "dupli";
 		else
-			checkResult="create";
-		
+			checkResult = "create";
 
 		return checkResult;
 	}
