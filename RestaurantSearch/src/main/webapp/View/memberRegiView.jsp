@@ -234,9 +234,9 @@ $(function(){
 		})
 		
 		$("#birthDate").blur(function(){
-			alert("asdf");
+			//alert("asdf");
 			var birthDateVal = $("#birthDate").val();
-			alert($("#birthDate").val().substring(0,4)+"월"+$("#birthDate").val().substring(4,6)+"일"+$('#birthDate').val().substring(6,8));
+			//alert($("#birthDate").val().substring(0,4)+"월"+$("#birthDate").val().substring(4,6)+"일"+$('#birthDate').val().substring(6,8));
 			var birthDateCheck = {number:false }
 			
 			for (i=0; i< birthDateVal.length; i++) {
@@ -245,17 +245,21 @@ $(function(){
 				}
 			}
 			
-			var birthLength=birthDateVal.length;
-			alert("생일길이=>"+birthLength);
-			var year=parseInt(birthDateVal.substring(0,4))
-			var month=parseInt(birthDateVal.substring(4,6))
-			var day=parseInt(birthDateVal.substring(6,8))
+			var birthLength=parseInt(birthDateVal.length);
+			//alert("생일길이=>"+birthLength);
+			var year=parseInt($("#birthDate").val().substring(0,4))
+			var month=parseInt($("#birthDate").val().substring(4,6))
+			var day=parseInt($("#birthDate").val().substring(6,8))
+			//alert("birthLength"+birthLength+"birthLength="+birthLength+"year"+year+"month"+month+"day"+day);
 			
 			 if (!($("#birthDate").val())) {
+				// alert("1")
 					$("#birthCheckMessage").html("<font id='idColor' color='red'>생년월일을 입력해주세요.</font>")
-			 }else if( birthLength!=8 || year<1920 || year>2017 || month>12 || day > 31 || (birthDateCheck["number"] != true) ){
+			 }else if( birthLength!=8 || year<1920 || year>2017 || month>12 || day > 31 ){
+				 //alert("2")
 					$("#birthCheckMessage").html("<font id='idColor' color='red'>생년월일이 정확하지 않습니다.</font>")
 			 }else{
+				 //alert("3")
 					$("#birthCheckMessage").html("")
 			 }
 			 
@@ -269,18 +273,9 @@ $(function(){
 				} 
 		})
 		
-		/* $("#birthDate").blur(function(){
-			if ($("#password").val() != $("#rePassword").val()) {
-				$("#passwordReCheckMessage").html("<font id='idColor' color='red'>비밀번호가 일치하지 않습니다.</font>")
-			} else {
-				$("#passwordReCheckMessage").html("");
-			}
-		}) */
-		
 })
-
-
-
+		
+					
 </script>
 </head>
 <body>
