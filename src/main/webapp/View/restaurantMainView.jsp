@@ -251,8 +251,8 @@
 
 					<h3 class="page-header nomargin-top">
 						<a href="realestate-list.html" data-toggle="tooltip"
-							title="view more"><i class="fa fa-plus-square-o"></i></a> Recent
-						<strong class="styleColor">Properties</strong>
+							title="view more"><i class="fa fa-plus-square-o"></i></a>
+						<strong class="styleColor">최근 등록</strong>된 시장
 					</h3>
 
 					<div class="row">
@@ -264,8 +264,8 @@
 								<figure>
 									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
-											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
-											OFFER
+											class="block fa fa-plus fsize20"></span> <strong>식당</strong>
+											보기
 									</span>
 									</a>
 									<img alt="" class="img-responsive"
@@ -273,10 +273,9 @@
 										width="409" height="271" />
 								</figure>
 								<div class="item-box-desc">
-									<h4>700 Front Street, Key West, FL</h4>
-									<small>$350.000</small>
-									<p>Billions of people travel in China during Lunar New
-										Year. Check out the mind-boggling figures.</p>
+									<h4>식당이름 1</h4>
+									<small>평점</small>
+									<p>한줄 설명</p>
 									<p>
 										<span class="fsize12 pull-right"> <i class="bed-ico"
 											title="beds"></i> 3 , <i class="garage-ico" title="garage"></i>
@@ -296,8 +295,8 @@
 								<figure>
 									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
-											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
-											OFFER
+											class="block fa fa-plus fsize20"></span> <strong>식당</strong>
+											보기
 									</span>
 									</a>
 									<img alt="" class="img-responsive"
@@ -305,10 +304,9 @@
 										width="409" height="271" />
 								</figure>
 								<div class="item-box-desc">
-									<h4>1903 Hollywood Blvd, Hollywood, FL</h4>
-									<small>$750.000</small>
-									<p>Billions of people travel in China during Lunar New
-										Year. Check out the mind-boggling figures.</p>
+									<h4>식당이름 2</h4>
+									<small>평점</small>
+									<p>한줄 설명</p>
 									<p>
 										<span class="fsize12 pull-right"> <i class="bed-ico"
 											title="beds"></i> 3 , <i class="garage-ico" title="garage"></i>
@@ -328,8 +326,8 @@
 								<figure>
 									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
-											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
-											OFFER
+											class="block fa fa-plus fsize20"></span> <strong>식당</strong>
+											보기
 									</span>
 									</a>
 									<img alt="" class="img-responsive"
@@ -337,10 +335,9 @@
 										width="409" height="271" />
 								</figure>
 								<div class="item-box-desc">
-									<h4>1903 Hollywood Blvd, Hollywood, FL</h4>
-									<small>$750.000</small>
-									<p>Billions of people travel in China during Lunar New
-										Year. Check out the mind-boggling figures.</p>
+									<h4>식당 3</h4>
+									<small>평점</small>
+									<p>한줄 설명</p>
 									<p>
 										<span class="fsize12 pull-right"> <i class="bed-ico"
 											title="beds"></i> 3 , <i class="garage-ico" title="garage"></i>
@@ -360,8 +357,8 @@
 								<figure>
 									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
-											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
-											OFFER
+											class="block fa fa-plus fsize20"></span> <strong>식당</strong>
+											보기
 									</span>
 									</a>
 									<img alt="" class="img-responsive"
@@ -369,10 +366,9 @@
 										width="409" height="271" />
 								</figure>
 								<div class="item-box-desc">
-									<h4>1903 Hollywood Blvd, Hollywood, FL</h4>
-									<small>$750.000</small>
-									<p>Billions of people travel in China during Lunar New
-										Year. Check out the mind-boggling figures.</p>
+									<h4>식당이름4</h4>
+									<small>평점</small>
+									<p>한줄 설명</p>
 									<p>
 										<span class="fsize12 pull-right"> <i class="bed-ico"
 											title="beds"></i> 3 , <i class="garage-ico" title="garage"></i>
@@ -391,7 +387,7 @@
 					<h3 class="page-header">
 						<a href="realestate-list.html" data-toggle="tooltip"
 							title="view more"><i class="fa fa-plus-square-o"></i></a> <strong
-							class="styleColor">Best</strong> Deal
+							class="styleColor">가장 핫한</strong> 식당
 					</h3>
 
 					<div class="row">
@@ -403,8 +399,8 @@
 								<figure>
 									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
-											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
-											OFFER
+											class="block fa fa-plus fsize20"></span> <strong>식당</strong>
+											보기
 									</span>
 									</a>
 									<img alt="" class="img-responsive"
@@ -412,10 +408,9 @@
 										width="409" height="271" />
 								</figure>
 								<div class="item-box-desc">
-									<h4>1903 Hollywood Blvd, FL</h4>
-									<small>$750.000</small>
-									<p>Billions of people travel in China during Lunar New
-										Year. Check out the mind-boggling figures.</p>
+									<h4>식당 이름5</h4>
+									<small>평점5</small>
+									<p>한줄 설명5</p>
 								</div>
 							</div>
 							<!-- /item -->
@@ -429,8 +424,8 @@
 								<figure>
 									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
-											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
-											OFFER
+											class="block fa fa-plus fsize20"></span> <strong>식당</strong>
+											보기
 									</span>
 									</a>
 									<img alt="" class="img-responsive"
@@ -438,10 +433,9 @@
 										width="409" height="271" />
 								</figure>
 								<div class="item-box-desc">
-									<h4>1903 Hollywood Blvd, FL</h4>
-									<small>$750.000</small>
-									<p>Billions of people travel in China during Lunar New
-										Year. Check out the mind-boggling figures.</p>
+									<h4>식당6</h4>
+									<small>평점6</small>
+									<p>한줄 설명6</p>
 								</div>
 							</div>
 							<!-- /item -->
@@ -455,8 +449,8 @@
 								<figure>
 									<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 										class="overlay color2"></span> <span class="inner"> <span
-											class="block fa fa-plus fsize20"></span> <strong>VIEW</strong>
-											OFFER
+											class="block fa fa-plus fsize20"></span> <strong>식당</strong>
+											보기
 									</span>
 									</a>
 									<img alt="" class="img-responsive"
@@ -464,10 +458,9 @@
 										width="409" height="271" />
 								</figure>
 								<div class="item-box-desc">
-									<h4>1903 Hollywood Blvd, FL</h4>
-									<small>$750.000</small>
-									<p>Billions of people travel in China during Lunar New
-										Year. Check out the mind-boggling figures.</p>
+									<h4>식당7</h4>
+									<small>평점7</small>
+									<p>한줄설명7</p>
 								</div>
 							</div>
 							<!-- /item -->
@@ -483,7 +476,7 @@
 
 					<!-- HOT -->
 					<h3 class="page-header nomargin-top margin-bottom40">
-						Today's <strong class="styleColor">Hot</strong>
+						 가장 <strong class="styleColor">뜨는 </strong> 맛집
 					</h3>
 
 					<!-- No #1 Hot -->
@@ -491,18 +484,18 @@
 						<figure>
 							<a class="item-hover" href="restaurantDetView.do?restaurantId=2"> <span
 								class="overlay color2"></span> <span class="inner"> <span
-									class="block fa fa-plus fsize20"></span> <strong>VEW</strong>
-									OFFER
-							</span>
+									class="block fa fa-plus fsize20"></span> <strong>식당</strong>
+									보기
+							</span>	
 							</a>
 							<img alt="" class="img-responsive"
 								src="design/images/demo/realestate/images/thumb/1.jpg" />
 						</figure>
 						<div class="item-box-desc">
 							<h4 class="wrap">
-								<a class="styleColor" href="#">1903 Hollywood Blvd, FL</a>
+								<a class="styleColor" href="#">맛집을 집에서도 쉽게!</a>
 							</h4>
-							<small class="font300 text-center block">~ $112.000 ~</small>
+							<small class="font300 text-center block">단돈 12,000으로 즐기세요</small>
 						</div>
 					</div>
 					<!-- /No #1 Hot -->
@@ -511,24 +504,22 @@
 					<iframe src="http://player.vimeo.com/video/73221098" width="800"
 						height="450"></iframe>
 					<h5 class="font300 padding10">
-						<small class="text-center block">(3287 views last 3 days)</small>
+						<small class="text-center block">(최근 3일간 조회수: 242142 )</small>
 					</h5>
-					/video -->
+					<!--  video-->
 
 					<!-- small articles -->
 					<div class="row">
 						<div class="col-xs-6 col-md-6">
 							<a href="#"> <img alt="" class="img-responsive"
 								src="design/images/demo/realestate/images/thumb/3.jpg" />
-								<h6 class="fsize12 font300 padding6 styleSecondColor">Horses
-									hypnotized by the sea</h6>
+								<h6 class="fsize12 font300 padding6 styleSecondColor">유럽의 느낌이 물씬 풍기는 식당</h6>
 							</a>
 						</div>
 						<div class="col-xs-6 col-md-6">
 							<a href="#"> <img alt="" class="img-responsive"
 								src="design/images/demo/realestate/images/thumb/4.jpg" />
-								<h6 class="fsize12 font300 padding6 styleSecondColor">Sochi
-									protesters fight to be heard</h6>
+								<h6 class="fsize12 font300 padding6 styleSecondColor">오늘... 화장실에서도 맛있게 먹는다</h6>
 							</a>
 						</div>
 					</div>
@@ -538,23 +529,20 @@
 
 					<!-- TWEETS -->
 					<h3 class="page-header">
-						<i class="fa fa-twitter"></i> Latest <strong class="styleColor">Tweets</strong>
+						<i class="fa fa-twitter"></i> 최신 <strong class="styleColor">트윗</strong>
 					</h3>
 
 					<p>
-						<a href="#">@tweetuser</a> Lorem ipsum dolor sit amet, consectetur
-						adipiscing elit. Integer posuere erat a ante. <small
-							class="block styleColor">12 hours ago</small>
+						<a href="#">공대생</a> 여기서 음식을 검색하고 여자친구가 생겼습니다! <small
+							class="block styleColor">12 시간 전</small>
 					</p>
 					<p>
-						<a href="#">@tweetuser</a> Lorem ipsum dolor sit amet, consectetur
-						adipiscing elit. Integer posuere erat a ante. <small
-							class="block styleColor">12 hours ago</small>
+						<a href="#">예비군 3년차</a> 정말 신통방통 하군요.. <small
+							class="block styleColor">12 시간 전</small>
 					</p>
 					<p>
-						<a href="#">@tweetuser</a> Lorem ipsum dolor sit amet, consectetur
-						adipiscing elit. Integer posuere erat a ante. <small
-							class="block styleColor">12 hours ago</small>
+						<a href="#">사대천왕</a> 방송에 내보낼 식당은 다 여기있네요 ㄳㄳ <small
+							class="block styleColor">12 시간 전</small>
 					</p>
 
 					<!-- SOCIALS -->
@@ -583,17 +571,16 @@
 			<div class="row bs-callout">
 				<div class="col-md-8 text-center">
 					<h3 class="padding20">
-						Subscribe <strong>now</strong> and get the most <strong>important</strong>
-						news.
+						지금 <strong>이메일 등록</strong>하시고 <strong>최신 업데이트</strong> 를 받아보세요
 					</h3>
 				</div>
 				<div class="col-md-4">
 
-					<p class="nomargin">Type your best E-mail Address</p>
+					<p class="nomargin">이메일 주소를 등록하세요.</p>
 
 					<form method="get" action="#" class="input-group">
 						<input type="text" class="form-control" name="k" id="k" value=""
-							placeholder="E-mail Address" /> <span class="input-group-btn">
+							placeholder="E-mail 주소" /> <span class="input-group-btn">
 							<button class="btn btn-primary">
 								<i class="fa fa-search"></i>
 							</button>
@@ -612,44 +599,36 @@
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="featured-box noradius responsive-line-bottom">
 						<i class="lightgray fa fa-map-marker hidden-xs"></i>
-						<h4>Listing</h4>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus.</p>
-						<a href="page-left-sidebar.html" class="btn btn-primary btn-xs">READ
-							MORE</a>
+						<h4>지도검색</h4>
+						<p>원하는 식당을 지도에서 바로바로 검색하세요!</p>
+						<a href="page-left-sidebar.html" class="btn btn-primary btn-xs">검색하기</a>
 					</div>
 				</div>
 
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="featured-box noradius line-left responsive-line-bottom">
 						<i class="lightgray fa fa-globe hidden-xs"></i>
-						<h4>Advertise</h4>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus.</p>
-						<a href="page-pricing.html" class="btn btn-primary btn-xs">READ
-							MORE</a>
+						<h4>식당 등록</h4>
+						<p>식당이 보이지 않다구요? 간편하게 지금 등록하세요.</p>
+						<a href="page-pricing.html" class="btn btn-primary btn-xs">식당 등록하기</a>
 					</div>
 				</div>
 
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="featured-box noradius line-left">
 						<i class="lightgray fa fa-road hidden-xs"></i>
-						<h4>Guidance</h4>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus.</p>
-						<a href="page-right-sidebar.html" class="btn btn-primary btn-xs">READ
-							MORE</a>
+						<h4>FAQ</h4>
+						<p>질문은 언제나 환영입니다! FAQ 게시판과 이메일, 전화로 연락주세요.</p>
+						<a href="page-right-sidebar.html" class="btn btn-primary btn-xs">질문하기</a>
 					</div>
 				</div>
 
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="featured-box noradius line-left">
 						<i class="lightgray fa fa-key hidden-xs"></i>
-						<h4>Free Tiral</h4>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus.</p>
-						<a href="page-full-width.html" class="btn btn-primary btn-xs">READ
-							MORE</a>
+						<h4>서비스는 무료입니다.</h4>
+						<p>현재 광고없는 무제한 무료 서비스를 지원중입니다.</p>
+						<a href="page-full-width.html" class="btn btn-primary btn-xs">자세히 보기</a>
 					</div>
 				</div>
 
@@ -670,7 +649,7 @@
 		<!-- copyright , scrollTo Top -->
 		<div class="footer-bar">
 			<div class="container">
-				<span class="copyright">Copyright &copy; Your Company, LLC .
+				<span class="copyright">Copyright &copy; git 짜증나요..., LLC .
 					All Rights Reserved.</span> <a class="toTop" href="#topNav">BACK TO
 					TOP <i class="fa fa-arrow-circle-up"></i>
 				</a>
@@ -690,17 +669,15 @@
 					<div class="column col-md-4">
 						<h3>CONTACT</h3>
 
-						<p class="contact-desc">Atropos is a very powerful HTML5
-							template, you will be able to create an awesome website in a very
-							simple way.</p>
+						<p class="contact-desc">더이상 시간을 낭비하지 마시고 원하는 음식을 바로 찾으세요!</p>
 						<address class="font-opensans">
 							<ul>
-								<li class="footer-sprite address">PO Box 21132<br /> Here
-									Weare St, Melbourne<br /> Vivas 2355 Australia<br />
+								<li class="footer-sprite address">서울시 강남구 테헤란로<br /> 1길
+									10 세경빌딩<br /> 
 								</li>
-								<li class="footer-sprite phone">Phone: 1-800-565-2390</li>
+								<li class="footer-sprite phone">Phone: +82)31-8282-8949</li>
 								<li class="footer-sprite email"><a
-									href="mailto:support@yourname.com">support@yourname.com</a></li>
+									href="mailto:support@yourname.com">FoodSearch@right.now</a></li>
 							</ul>
 						</address>
 
@@ -721,7 +698,7 @@
 
 					<!-- FOOTER LATEST POSTS -->
 					<div class="column col-md-4 text-right">
-						<h3>RECENT POSTS</h3>
+						<h3>최신 등록글</h3>
 
 						<div class="post-item">
 							<small>JANUARY 2, 2014 BY ADMIN</small>
@@ -784,9 +761,7 @@
 		src="design/plugins/jquery.backstretch.min.js"></script>
 	<script type="text/javascript"
 		src="design/plugins/superslides/dist/jquery.superslides.min.js"></script>
-	<!-- <script type="text/javascript"
-		src="design/plugins/styleswitcher/styleswitcher.js"></script> -->
-	<!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
+
 	<script type="text/javascript"
 		src="design/plugins/mediaelement/build/mediaelement-and-player.min.js"></script>
 
@@ -794,17 +769,7 @@
 	<script type="text/javascript" src="design/js/scripts.js"></script>
 
 
-	<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
-	<!--<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-XXXXX-X', 'domainname.com');
-			ga('send', 'pageview');
-		</script>
-		-->
+	
 
 
 

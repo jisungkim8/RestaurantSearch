@@ -422,174 +422,161 @@
 									<!-- review tab -->
 									<div id="tab3" class="tab-pane">
 										<!-- reivew -->
-										<%-- <c:if test="${ }">
-											등록된 리뷰가 없습니다.
-										</c:if>
-										
-										<c:if test="${ }"> --%>
-											<div>
-												<div class="col-md-12">
-													<div class="col-md-4">
-														<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'>
-		
-															<li><!-- item -->
-																<div class="item-box nomargin-top">
-																	<figure>
-																		<a class="item-hover" href="<c:url value="design/images/demo/people/1.jpg" />"></a>
-																		<img alt="" class="img-responsive" src="<c:url value="design/images/demo/realestate/images/thumb/1.jpg" />" />
-																	</figure>
-																</div>
-															</li>
-																
-															<li>
-																<div class="item-box nomargin-top">
-																	<figure>
-																		<a class="item-hover" href="<c:url value="design/images/demo/people/2.jpg" />"></a>
-																	</figure>
-																</div>
-															</li>
-															
-															<li>
-																<div class="item-box nomargin-top">
-																	<figure>
-																		<a class="item-hover" href="<c:url value="design/images/demo/people/3.jpg" />"></a>
-																	</figure>
-																</div>
-															</li>
-														</ul>
-		
-													</div>
-													
-													<div class="col-md-8">
-														<div class="row">
-								
-															<div class="toogle">
-							
-																<div class="toggle">
-																	<label>title1</label>
-																	<div class="toggle-content">
-																		<p>content1</p>
-																	</div>
-																</div>
-							
+										<div>
+											<div class="col-md-12">
+												<div class="col-md-4">
+													<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'>
+	
+														<li><!-- item -->
+															<div class="item-box nomargin-top">
+																<figure>
+																	<a class="item-hover" href="<c:url value="design/images/demo/people/1.jpg" />"></a>
+																	<img alt="" class="img-responsive" src="<c:url value="design/images/demo/realestate/images/thumb/1.jpg" />" />
+																</figure>
 															</div>
-								
+														</li>
+															
+														<li>
+															<div class="item-box nomargin-top">
+																<figure>
+																	<a class="item-hover" href="<c:url value="design/images/demo/people/2.jpg" />"></a>
+																</figure>
+															</div>
+														</li>
+														
+														<li>
+															<div class="item-box nomargin-top">
+																<figure>
+																	<a class="item-hover" href="<c:url value="design/images/demo/people/3.jpg" />"></a>
+																</figure>
+															</div>
+														</li>
+													</ul>
+	
+												</div>
+												
+												<div class="col-md-8">
+													<div class="row">
+							
+														<div class="toogle">
+						
+															<div class="toggle">
+																<label>title1</label>
+																<div class="toggle-content">
+																	<p>content1</p>
+																</div>
+															</div>
+						
 														</div>
+							
 													</div>
 												</div>
 											</div>
 											
-											<div>
-												<h4 align="center">
-													<button>더보기..</button>
-												</h4>
+											<div class="col-md-12">
+												<div class="col-md-4">
+													<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'>
+	
+														<li><!-- item -->
+															<div class="item-box nomargin-top">
+																<figure>
+																	<a class="item-hover" href="<c:url value="design/images/demo/people/1.jpg" />"></a>
+																	<img alt="" class="img-responsive" src="<c:url value="design/images/demo/realestate/images/thumb/1.jpg" />" />
+																</figure>
+															</div>
+														</li>
+															
+														<li>
+															<div class="item-box nomargin-top">
+																<figure>
+																	<a class="item-hover" href="<c:url value="design/images/demo/people/2.jpg" />"></a>
+																</figure>
+															</div>
+														</li>
+														
+														<li>
+															<div class="item-box nomargin-top">
+																<figure>
+																	<a class="item-hover" href="<c:url value="design/images/demo/people/3.jpg" />"></a>
+																</figure>
+															</div>
+														</li>
+													</ul>
+												</div>
+												
+												<div class="col-md-8">
+													<div class="row">
+							
+														<div class="toogle">
+						
+															<div class="toggle">
+																<label>title2</label>
+																<div class="toggle-content">
+																	<p>content2</p>
+																</div>
+															</div>
+						
+														</div>
+							
+													</div>
+												</div>
 											</div>
-										<%-- </c:if> --%> 
 											
-<!-- 											<div class="col-md-12"> -->
-<!-- 												<div class="col-md-4"> -->
-<!-- 													<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'> -->
+											<div class="col-md-12">
+												<div class="col-md-4">
+													<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'>
 	
-<!-- 														<li>item -->
-<!-- 															<div class="item-box nomargin-top"> -->
-<!-- 																<figure> -->
-<%-- 																	<a class="item-hover" href="<c:url value="design/images/demo/people/1.jpg" />"></a> --%>
-<%-- 																	<img alt="" class="img-responsive" src="<c:url value="design/images/demo/realestate/images/thumb/1.jpg" />" /> --%>
-<!-- 																</figure> -->
-<!-- 															</div> -->
-<!-- 														</li> -->
+														<li><!-- item -->
+															<div class="item-box nomargin-top">
+																<figure>
+																	<a class="item-hover" href="<c:url value="design/images/demo/people/1.jpg" />"></a>
+																	<img alt="" class="img-responsive" src="<c:url value="design/images/demo/realestate/images/thumb/1.jpg" />" />
+																</figure>
+															</div>
+														</li>
 															
-<!-- 														<li> -->
-<!-- 															<div class="item-box nomargin-top"> -->
-<!-- 																<figure> -->
-<%-- 																	<a class="item-hover" href="<c:url value="design/images/demo/people/2.jpg" />"></a> --%>
-<!-- 																</figure> -->
-<!-- 															</div> -->
-<!-- 														</li> -->
+														<li>
+															<div class="item-box nomargin-top">
+																<figure>
+																	<a class="item-hover" href="<c:url value="design/images/demo/people/2.jpg" />"></a>
+																</figure>
+															</div>
+														</li>
 														
-<!-- 														<li> -->
-<!-- 															<div class="item-box nomargin-top"> -->
-<!-- 																<figure> -->
-<%-- 																	<a class="item-hover" href="<c:url value="design/images/demo/people/3.jpg" />"></a> --%>
-<!-- 																</figure> -->
-<!-- 															</div> -->
-<!-- 														</li> -->
-<!-- 													</ul> -->
-<!-- 												</div> -->
+														<li>
+															<div class="item-box nomargin-top">
+																<figure>
+																	<a class="item-hover" href="<c:url value="design/images/demo/people/3.jpg" />"></a>
+																</figure>
+															</div>
+														</li>
+													</ul>
+												</div>
 												
-<!-- 												<div class="col-md-8"> -->
-<!-- 													<div class="row"> -->
+												<div class="col-md-8">
+													<div class="row">
 							
-<!-- 														<div class="toogle"> -->
+														<div class="toogle">
 						
-<!-- 															<div class="toggle"> -->
-<!-- 																<label>title2</label> -->
-<!-- 																<div class="toggle-content"> -->
-<!-- 																	<p>content2</p> -->
-<!-- 																</div> -->
-<!-- 															</div> -->
+															<div class="toggle">
+																<label>title3</label>
+																<div class="toggle-content">
+																	<p>content3</p>
+																</div>
+															</div>
 						
-<!-- 														</div> -->
+														</div>
 							
-<!-- 													</div> -->
-<!-- 												</div> -->
-<!-- 											</div> -->
-											
-<!-- 											<div class="col-md-12"> -->
-<!-- 												<div class="col-md-4"> -->
-<!-- 													<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'> -->
-	
-<!-- 														<li>item -->
-<!-- 															<div class="item-box nomargin-top"> -->
-<!-- 																<figure> -->
-<%-- 																	<a class="item-hover" href="<c:url value="design/images/demo/people/1.jpg" />"></a> --%>
-<%-- 																	<img alt="" class="img-responsive" src="<c:url value="design/images/demo/realestate/images/thumb/1.jpg" />" /> --%>
-<!-- 																</figure> -->
-<!-- 															</div> -->
-<!-- 														</li> -->
-															
-<!-- 														<li> -->
-<!-- 															<div class="item-box nomargin-top"> -->
-<!-- 																<figure> -->
-<%-- 																	<a class="item-hover" href="<c:url value="design/images/demo/people/2.jpg" />"></a> --%>
-<!-- 																</figure> -->
-<!-- 															</div> -->
-<!-- 														</li> -->
-														
-<!-- 														<li> -->
-<!-- 															<div class="item-box nomargin-top"> -->
-<!-- 																<figure> -->
-<%-- 																	<a class="item-hover" href="<c:url value="design/images/demo/people/3.jpg" />"></a> --%>
-<!-- 																</figure> -->
-<!-- 															</div> -->
-<!-- 														</li> -->
-<!-- 													</ul> -->
-<!-- 												</div> -->
-												
-<!-- 												<div class="col-md-8"> -->
-<!-- 													<div class="row"> -->
-							
-<!-- 														<div class="toogle"> -->
-						
-<!-- 															<div class="toggle"> -->
-<!-- 																<label>title3</label> -->
-<!-- 																<div class="toggle-content"> -->
-<!-- 																	<p>content3</p> -->
-<!-- 																</div> -->
-<!-- 															</div> -->
-						
-<!-- 														</div> -->
-							
-<!-- 													</div> -->
-<!-- 												</div> -->
-<!-- 											</div> -->
-<!-- 										</div> -->
+													</div>
+												</div>
+											</div>
+										</div>
 										<!-- /reivew -->
-<!-- 										<div> -->
-<!-- 											<h4 align="center"> -->
-<!-- 												<button>더보기..</button> -->
-<!-- 											</h4> -->
-<!-- 										</div> -->
+										<div>
+											<h4 align="center">
+												<button>더보기..</button>
+											</h4>
+										</div>
 									</div>
 									<!-- /review tab -->
 								</div>
