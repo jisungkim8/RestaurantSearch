@@ -4,21 +4,22 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 public class MemSimInfoDto {
-	int lonigCnt;
+	int loginCnt;
 	int accuPoint;
 	int currPoint;
 	String memberGrade;
 	String memberId;
 	String password;
-	Timestamp lastLoginTime;
+	String lastLoginTime;
 	Date registerDate;
 
-	public int getLonigCnt() {
-		return lonigCnt;
+
+	public int getLoginCnt() {
+		return loginCnt;
 	}
 
-	public void setLonigCnt(int lonigCnt) {
-		this.lonigCnt = lonigCnt;
+	public void setLoginCnt(int loginCnt) {
+		this.loginCnt = loginCnt;
 	}
 
 	public int getAccuPoint() {
@@ -61,11 +62,11 @@ public class MemSimInfoDto {
 		this.password = password;
 	}
 
-	public Timestamp getLastLoginTime() {
+	public String getLastLoginTime() {
 		return lastLoginTime;
 	}
 
-	public void setLastLoginTime(Timestamp lastLoginTime) {
+	public void setLastLoginTime(String lastLoginTime) {
 		this.lastLoginTime = lastLoginTime;
 	}
 
@@ -80,9 +81,9 @@ public class MemSimInfoDto {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "MemSimInfoDto[lonigCnt;="+lonigCnt+",accuPoint;="+accuPoint+",currPoint;="+
+		return "MemSimInfoDto[lonigCnt="+loginCnt+",accuPoint="+accuPoint+",currPoint="+
 		currPoint+",memberGrade="+memberGrade+",memberId="+memberId+",password="+password+
-		"lastLoginTime"+lastLoginTime+"registerDate"+registerDate+"]";
+		"lastLoginTime="+lastLoginTime+"registerDate="+registerDate+"]";
 	}
 
 }

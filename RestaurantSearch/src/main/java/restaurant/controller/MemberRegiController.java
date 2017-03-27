@@ -1,5 +1,10 @@
 package restaurant.controller;
 
+import java.util.Date;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import restaurant.dao.MemberDao;
@@ -41,43 +47,49 @@ public class MemberRegiController {
 
 		memDetInfoDto.setMemberType("초급");
 		System.out.println("memDetInfoDto.getEmailCheck()==>" + memDetInfoDto.getEmailCheck());
-		try {
-			if (memDetInfoDto.getEmailCheck().equals("on")) {
-				System.out.println("on");
-				memDetInfoDto.setEmailCheck("receive");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			memDetInfoDto.setEmailCheck("noReceive");
 
+		if (memDetInfoDto.getEmailCheck() == null) {
+			System.out.println("memDetInfoDto.getEmailCheck() == null");
+			memDetInfoDto.setEmailCheck("미수신");
 		}
-
+		
+		SimpleDateFormat formatter = new SimpleDateFormat ( "yyyy.MM.dd HH:mm:ss", Locale.KOREA );
+		Date currentTime = new Date();
+		String dTime = formatter.format ( currentTime );
+		System.out.println("dTime=>"+dTime);
+		memSimInfoDto.setLastLoginTime(dTime);
+		memSimInfoDto.setMemberGrade("초급");
+		
 		System.out.println("memDetInfoDto=" + memDetInfoDto);
+		System.out.println("memSimInfoDto=" + memSimInfoDto);
 
 		System.out.println("MemberRegiController RequestMethod.POST 메서드 호출됨!");
 
 		// 정상적으로 에러가 발생이 되지 않고 입력을 완수 했다면
 		memberDao.insertMember(memDetInfoDto);
+	    memberDao.insertMemSimInfo(memSimInfoDto);
+	    
 		// ModelAndView mav=new ModelAndView("redirect:/list.do")
 		return new ModelAndView("redirect:/restaurantMain.do");
 
 	}
-	
-	@RequestMapping("/dupliMemberCheck.do")
-	public String dupliIdCheck(HttpServletRequest request ,HttpServletResponse reponse) {
+
+	@RequestMapping("dupliMemberCheck.do")
+	@ResponseBody
+	public String dupliIdCheck(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
 		String checkResult = "";
-		
-		System.out.println("dupliIdCheck id=>"+id);
+
+		System.out.println(" dupliIdCheck dupliIdCheck id=>" + id);
 
 		// ex) Model 단에서 DB 조회
 
 		int memberCount = memberDao.checkIdMember(id);
 
-		if(memberCount >= 1)
-			checkResult="dupli";
+		if (memberCount >= 1)
+			checkResult = "dupli";
 		else
-			checkResult="create";
+			checkResult = "create";
 
 		return checkResult;
 	}
