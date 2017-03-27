@@ -27,8 +27,4 @@ public class MainViewController {
 		mav.addObject("message2","스프링 기본틀 완성" );
 		return mav;
 	}
-	
-	
-	
-	
 }
