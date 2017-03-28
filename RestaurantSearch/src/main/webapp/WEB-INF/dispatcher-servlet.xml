@@ -36,6 +36,8 @@
 	<bean class="restaurant.dao.RestaurantDaoImpl" />
 	<bean class="restaurant.dao.ShopDetInfoDaoImpl" />
 	<bean class="restaurant.dao.ShopPhotoDaoImpl" />
+	<bean class="restaurant.dao.ShopReviewDaoImpl" />
+	<bean class="restaurant.dao.ReviewPhotoDaoImpl" />
 	<bean class="restaurant.controller.RestaurantDetViewController" />
 	
 	<!-- 메인페이지 검색하기 -->

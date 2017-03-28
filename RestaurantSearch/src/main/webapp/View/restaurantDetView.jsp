@@ -76,7 +76,7 @@
 				</button>
 	
 				<!-- Logo text or image -->
-				<a class="logo" href="restaurantMain.do"> <img
+				<a class="logo" href="index.html"> <img
 					src="design/images/logo.png" alt="Atropos" />
 				</a>
 	
@@ -155,11 +155,11 @@
 					
 						<!-- park -->
 						<div class="white-row">
-								<h1 class="page-header margin-bottom40">
-									<strong class="styleColor">${restaurantDto.restaurantName}</strong>
-									<i class="featured-icon half empty fa fa-heart-o"></i>
-									<i class="featured-icon half fa fa-heart-o"></i>
-								</h1>
+							<h1 class="page-header margin-bottom40">
+								<strong class="styleColor">${restaurantDto.restaurantName}</strong>
+								<i class="featured-icon half empty fa fa-heart-o"></i>
+								<i class="featured-icon half fa fa-heart-o"></i>
+							</h1>
 								
 						</div>
 						<!-- /park -->
@@ -171,20 +171,31 @@
 								carousel 
 								900px images required!
 							-->
-							<c:if test="${shopPhotoDtoSepNum1DetView.isEmpty()}">
-									등록된 사진이 없습니다.
-							</c:if>
-							
-							<c:if test="${!shopPhotoDtoSepNum1DetView.isEmpty()}">
-								<div class="owl-carousel controlls-over" data-plugin-options='{"autoPlay":true, "stopOnHover":false, "items": 1, "singleItem": true, "navigation": true, "pagination": true, "transitionStyle":"fadeUp", "itemsScaleUp":true}'>
-									<c:forEach var="shopPhotoDtoSepNum1" items="${shopPhotoDtoSepNum1DetView}">
+							<c:if test="${shopPhotoDtoSepNum1.isEmpty()}">
+								<div class="owl-carousel controlls-over" data-plugin-options='{"autoPlay":false, "stopOnHover":false, "items": 1, "singleItem": true, "navigation": true, "pagination": true, "transitionStyle":"fadeUp", "itemsScaleUp":true}'>
+									<c:forEach var="shopPhotoSepNum1" items="design/images/noimg.png">
 										<div>
 											<div class="owl-caption text-left">
 												<p class="hidden-xs"><!-- hide on mobile -->
 													Lorem Ipsum Dolor Sit Amet...
 												</p>
 											</div>
-											<img alt="" class="img-responsive" src="<c:url value="${shopPhotoDtoSepNum1.photoPath}" />" width="600" height="400" />
+											<img alt="" class="img-responsive" src="<c:url value="design/images/noimg.png" />" width="600" height="400" />
+										</div>
+									</c:forEach>
+								</div>
+							</c:if>
+							
+							<c:if test="${!shopPhotoDtoSepNum1.isEmpty()}">
+								<div class="owl-carousel controlls-over" data-plugin-options='{"autoPlay":true, "stopOnHover":false, "items": 1, "singleItem": true, "navigation": true, "pagination": true, "transitionStyle":"fadeUp", "itemsScaleUp":true}'>
+									<c:forEach var="shopPhotoSepNum1" items="${shopPhotoDtoSepNum1}">
+										<div>
+											<div class="owl-caption text-left">
+												<p class="hidden-xs"><!-- hide on mobile -->
+													Lorem Ipsum Dolor Sit Amet...
+												</p>
+											</div>
+											<img alt="" class="img-responsive" src="<c:url value="${shopPhotoSepNum1.photoPath}" />" width="600" height="400" />
 										</div>
 									</c:forEach>
 								</div>
@@ -294,24 +305,39 @@
 													<label>대표 메뉴</label>
 													<div class="toggle-content">
 													
-														<c:if test="${shopPhotoDtoSepNum2DetView.isEmpty()}">
-															등록된 사진이 없습니다.
+														<c:if test="${shopPhotoDtoSepNum2.isEmpty()}">
+															<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'>
+																<li class="col-sm-4"><!-- item -->
+																	<div class="item-box">
+																		<figure>
+																			<a class="item-hover" href="<c:url value="design/images/noimg.png" />">
+																				<span class="overlay color2"></span>
+																				<span class="inner">
+																					<span class="block fa fa-eye fsize20"></span>
+																					<strong>VIEW</strong> IMAGE
+																				</span>
+																			</a>
+																			<img class="img-responsive" src="<c:url value="design/images/noimg.png" />" width="260" height="260" alt="">
+																		</figure>
+																	</div>
+																</li>
+															</ul>
 														</c:if>
 														
-														<c:if test="${!shopPhotoDtoSepNum2DetView.isEmpty()}">
+														<c:if test="${!shopPhotoDtoSepNum2.isEmpty()}">
 															<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'>
-																<c:forEach var="shopPhotoDtoSepNum2" items="${shopPhotoDtoSepNum2DetView}">
+																<c:forEach var="shopPhotoSepNum2" items="${shopPhotoDtoSepNum2}">
 																	<li class="col-sm-4"><!-- item -->
 																		<div class="item-box">
 																			<figure>
-																				<a class="item-hover" href="<c:url value="${shopPhotoDtoSepNum2.photoPath}" />">
+																				<a class="item-hover" href="<c:url value="${shopPhotoSepNum2.photoPath}" />">
 																					<span class="overlay color2"></span>
 																					<span class="inner">
 																						<span class="block fa fa-eye fsize20"></span>
 																						<strong>VIEW</strong> IMAGE
 																					</span>
 																				</a>
-																				<img class="img-responsive" src="<c:url value="${shopPhotoDtoSepNum2.photoPath}" />" width="260" height="260" alt="">
+																				<img class="img-responsive" src="<c:url value="${shopPhotoSepNum2.photoPath}" />" width="260" height="260" alt="">
 																			</figure>
 																		</div>
 																	</li>
@@ -422,69 +448,59 @@
 									<!-- review tab -->
 									<div id="tab3" class="tab-pane">
 										<!-- reivew -->
-										<%-- <c:if test="${ }">
+										<c:if test="${shopReviewDto.isEmpty()}">
 											등록된 리뷰가 없습니다.
 										</c:if>
 										
-										<c:if test="${ }"> --%>
-											<div>
-												<div class="col-md-12">
-													<div class="col-md-4">
-														<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'>
-		
-															<li><!-- item -->
-																<div class="item-box nomargin-top">
-																	<figure>
-																		<a class="item-hover" href="<c:url value="design/images/demo/people/1.jpg" />"></a>
-																		<img alt="" class="img-responsive" src="<c:url value="design/images/demo/realestate/images/thumb/1.jpg" />" />
-																	</figure>
-																</div>
-															</li>
-																
-															<li>
-																<div class="item-box nomargin-top">
-																	<figure>
-																		<a class="item-hover" href="<c:url value="design/images/demo/people/2.jpg" />"></a>
-																	</figure>
-																</div>
-															</li>
-															
-															<li>
-																<div class="item-box nomargin-top">
-																	<figure>
-																		<a class="item-hover" href="<c:url value="design/images/demo/people/3.jpg" />"></a>
-																	</figure>
-																</div>
-															</li>
-														</ul>
-		
-													</div>
-													
-													<div class="col-md-8">
-														<div class="row">
+										<c:if test="${!shopReviewDto.isEmpty()}">
+											<c:forEach var="shopReview" items="${shopReviewDto}">
+												<div>
+													<div class="col-md-12">
+														<div class="col-md-4">
+															<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'>
+																<c:forEach var="reviewPhoto" items="${reviewPhotoDto}" varStatus="vs">
+																	<c:if test="${reviewPhoto.reviewId == shopReview.reviewId}">
+																		<li> <!-- item -->
+																			<div class="item-box nomargin-top">
+																				<figure>
+																					<a class="item-hover" href="<c:url value="${reviewPhoto.photoPath}" />"></a>
+																					<c:if test="${vs.first == true}">
+																						<img alt="" class="img-responsive" src="<c:url value="${reviewPhoto.photoPath}" />" />
+																					</c:if>
+																				</figure>
+																			</div>
+																		</li>
+																	</c:if>
+																</c:forEach>
+															</ul>
+														</div>
+														
+														<div class="col-md-8">
+															<div class="row">
+									
+																<div class="toogle">
 								
-															<div class="toogle">
-							
-																<div class="toggle">
-																	<label>title1</label>
-																	<div class="toggle-content">
-																		<p>content1</p>
+																	<div class="toggle active">
+																		<label>${shopReview.title}</label>
+																		<div class="toggle-content">
+																			<p>${shopReview.content}</p>
+																		</div>
 																	</div>
-																</div>
-							
-															</div>
 								
+																</div>
+									
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
+											</c:forEach>
 											
 											<div>
 												<h4 align="center">
 													<button>더보기..</button>
 												</h4>
 											</div>
-										<%-- </c:if> --%> 
+										</c:if>
 											
 <!-- 											<div class="col-md-12"> -->
 <!-- 												<div class="col-md-4"> -->
