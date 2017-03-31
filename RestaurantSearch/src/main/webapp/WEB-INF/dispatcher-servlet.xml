@@ -32,6 +32,7 @@
 	<bean class="restaurant.controller.MemberRegiController" />
 	<bean class="restaurant.dao.MemberDaoImpl" />
 	
+	
 	<!-- 상세페이지 -->
 	<bean class="restaurant.dao.RestaurantDaoImpl" />
 	<bean class="restaurant.dao.ShopDetInfoDaoImpl" />
@@ -42,6 +43,15 @@
 	
 	<!-- 메인페이지 검색하기 -->
     <bean class="restaurant.controller.MainSearchController"/>
+    
+    <!-- 자유게시판 -->
+    <bean class="restaurant.controller.BoardListController" />
+    <bean class="restaurant.dao.BoardDaoImpl" />
+    <bean class="restaurant.controller.BoardWriteController" />
+    <bean class="restaurant.controller.BoardDetailController" />
+    <bean class="restaurant.controller.BoardUpdateController" />
+    <bean class="restaurant.controller.BoardDeleteController" />
+    <bean id="downloadView" class="restaurant.board.view.DownloadView" />
     
 	<!-- 1.messageSource(리소스번들 파일) 유효성검사 문자열 메세지,자주사용 문구 -->
 	<bean id="messageSource"
@@ -63,4 +73,20 @@
 			</props>
 		</property>
 	</bean>
+	
+	   <!--파일업로드(maxUploadSize)최대업로드 용량크기(byte)
+       ex)50M=51,200kB=52,428,800byte 
+       defaultEncoding->기본 캐릭터설정
+       -->
+       
+    <bean id="multipartResolver" 
+    class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+       <property name="maxUploadSize"  value="52428800" />
+       <property name="defaultEncoding"  value="UTF-8" />
+    </bean>
+    
+    <!-- 다운로드 viewResolver (order->같은 기능을 가진 클래스) -->
+   <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
+              p:order="0" />
+              
 </beans>

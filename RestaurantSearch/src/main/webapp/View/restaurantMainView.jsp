@@ -625,9 +625,9 @@
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="featured-box noradius line-left">
 						<i class="lightgray fa fa-road hidden-xs"></i>
-						<h4>FAQ</h4>
-						<p>질문은 언제나 환영입니다! FAQ 게시판과 이메일, 전화로 연락주세요.</p>
-						<a href="page-right-sidebar.html" class="btn btn-primary btn-xs">질문하기</a>
+						<h4>QnA</h4>
+						<p>질문은 언제나 환영입니다! QnA 게시판과 이메일, 전화로 연락주세요.</p>
+						<a href="boardList.do" class="btn btn-primary btn-xs">질문하기</a>
 					</div>
 				</div>
 

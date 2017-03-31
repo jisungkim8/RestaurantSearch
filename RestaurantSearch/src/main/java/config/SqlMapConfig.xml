@@ -13,6 +13,7 @@
 		<typeAlias alias="ShopPhotoDto" type="restaurant.dto.ShopPhotoDto" />
 		<typeAlias alias="ShopReviewDto" type="restaurant.dto.ShopReviewDto" />
 		<typeAlias alias="ReviewPhotoDto" type="restaurant.dto.ReviewPhotoDto" />
+		<typeAlias alias="BoardDto" type="restaurant.dto.BoardDto" />
 
 	</typeAliases>
 
@@ -25,6 +26,7 @@
 		<mapper resource="restaurant/query/shopPhotoQuery.xml" />
 		<mapper resource="restaurant/query/shopReviewQuery.xml" />
 		<mapper resource="restaurant/query/reviewPhotoQuery.xml" />
+		<mapper resource="restaurant/query/BoardQuery.xml" />
 	</mappers>
 
 </configuration>
